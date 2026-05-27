@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.Python
+.venv/
+venv/
+env/
+
+# Data: only the download script is tracked
+data/*
+!data/.gitkeep
+
+# Build artifacts
+build/
+dist/
+*.log
+
+# Training artifacts (the final .keras and .tflite files in /models ARE tracked)
+checkpoints/
+runs/
+*.png.tmp
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp

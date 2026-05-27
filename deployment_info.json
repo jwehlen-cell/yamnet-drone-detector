@@ -1,0 +1,52 @@
+{
+  "name": "yamnet-drone-detector",
+  "description": "Standalone YAMNet + dense classifier for drone audio detection.",
+  "models": {
+    "binary": {
+      "keras": "models/drone_classifier_binary.keras",
+      "tflite": "models/drone_classifier_binary.tflite",
+      "metrics": "models/metrics_binary.json",
+      "labels": ["no_drone", "drone"],
+      "output_kind": "sigmoid",
+      "default_threshold": 0.7,
+      "test_accuracy": 0.9522502744237102,
+      "test_precision": 0.9340659340659341,
+      "test_recall": 0.9296875,
+      "test_f1": 0.9318715740015662,
+      "test_set_size": 1822
+    },
+    "subtype": {
+      "keras": "models/drone_classifier_subtype.keras",
+      "tflite": "models/drone_classifier_subtype.tflite",
+      "labels_file": "models/drone_classifier_subtype.labels.json",
+      "metrics": "models/metrics_subtype.json",
+      "output_kind": "softmax",
+      "default_threshold": 0.7,
+      "labels": ["matrice", "mavic3", "mavicmini", "no_drone"],
+      "test_accuracy": 0.9511525795828759,
+      "test_precision_macro": 0.9607071997297709,
+      "test_recall_macro": 0.9462362275411093,
+      "test_f1_macro": 0.9528741991163485,
+      "test_set_size": 1822
+    }
+  },
+  "input_format": {
+    "audio": "16 kHz mono, float32 in [-1, 1]",
+    "window_seconds": 1.0,
+    "note": "DroneDetector resamples and downmixes automatically; external pipelines may pass any sample rate / channel layout."
+  },
+  "yamnet": {
+    "hub_url": "https://tfhub.dev/google/yamnet/1",
+    "embedding_dim": 1024,
+    "frame_hop_seconds": 0.48,
+    "frame_length_seconds": 0.96
+  },
+  "dataset": {
+    "title": "YAMNet Embeddings for Drone Detection",
+    "publisher": "Embry-Riddle Aeronautical University",
+    "doi": "10.17632/5dmcszvym4.3",
+    "url": "https://data.mendeley.com/datasets/5dmcszvym4/3",
+    "mirror": "https://datacommons.erau.edu/datasets/5dmcszvym4/3",
+    "license": "CC BY 4.0"
+  }
+}
