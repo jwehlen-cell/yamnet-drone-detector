@@ -9,11 +9,11 @@
       "labels": ["no_drone", "drone"],
       "output_kind": "sigmoid",
       "default_threshold": 0.7,
-      "test_accuracy": 0.9522502744237102,
-      "test_precision": 0.9340659340659341,
-      "test_recall": 0.9296875,
-      "test_f1": 0.9318715740015662,
-      "test_set_size": 1822
+      "test_accuracy": 0.9527054108216433,
+      "test_precision": 0.9297297297297298,
+      "test_recall": 0.9419496166484118,
+      "test_f1": 0.9357997823721437,
+      "test_set_size": 2495
     },
     "subtype": {
       "keras": "models/drone_classifier_subtype.keras",
@@ -22,12 +22,12 @@
       "metrics": "models/metrics_subtype.json",
       "output_kind": "softmax",
       "default_threshold": 0.7,
-      "labels": ["matrice", "mavic3", "mavicmini", "no_drone"],
-      "test_accuracy": 0.9511525795828759,
-      "test_precision_macro": 0.9607071997297709,
-      "test_recall_macro": 0.9462362275411093,
-      "test_f1_macro": 0.9528741991163485,
-      "test_set_size": 1822
+      "labels": ["bebop", "mambo", "matrice", "mavic3", "mavicmini", "no_drone"],
+      "test_accuracy": 0.9360932475884244,
+      "test_precision_macro": 0.8985200715463875,
+      "test_recall_macro": 0.9347579477593687,
+      "test_f1_macro": 0.9157881653330638,
+      "test_set_size": 2488
     }
   },
   "input_format": {
@@ -41,12 +41,29 @@
     "frame_hop_seconds": 0.48,
     "frame_length_seconds": 0.96
   },
-  "dataset": {
-    "title": "YAMNet Embeddings for Drone Detection",
-    "publisher": "Embry-Riddle Aeronautical University",
-    "doi": "10.17632/5dmcszvym4.3",
-    "url": "https://data.mendeley.com/datasets/5dmcszvym4/3",
-    "mirror": "https://datacommons.erau.edu/datasets/5dmcszvym4/3",
-    "license": "CC BY 4.0"
-  }
+  "datasets": [
+    {
+      "title": "YAMNet Embeddings for Drone Detection",
+      "publisher": "Embry-Riddle Aeronautical University",
+      "doi": "10.17632/5dmcszvym4.3",
+      "url": "https://data.mendeley.com/datasets/5dmcszvym4/3",
+      "mirror": "https://datacommons.erau.edu/datasets/5dmcszvym4/3",
+      "license": "CC BY 4.0",
+      "role": "Base: matrice / mavic3 / mavicmini drone subtypes + no_drone negatives"
+    },
+    {
+      "title": "DroneAudioDataset",
+      "publisher": "Sara Al-Emadi et al. (IWCMC 2019)",
+      "url": "https://github.com/saraalemadi/DroneAudioDataset",
+      "license": "No explicit license; cite IWCMC 2019 paper",
+      "role": "Adds bebop and mambo drone subtypes + ESC-50/speech-noise negatives"
+    },
+    {
+      "title": "Multiclass Acoustic Dataset visualization samples",
+      "publisher": "Wang et al. (arXiv:2509.04715, 2025)",
+      "url": "https://github.com/mackenzie-jane/drone-visualization",
+      "license": "No explicit license; cite arXiv:2509.04715",
+      "role": "32 single-clip drone-model samples used as binary positives only"
+    }
+  ]
 }

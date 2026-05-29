@@ -48,6 +48,18 @@ DATA_DIR = ROOT / "data"
 MODEL_DIR = ROOT / "models"
 MODEL_DIR.mkdir(exist_ok=True)
 
+# Extra dataset roots produced by ``embed_extra_audio.py``. Each root mirrors
+# the ERAU on-disk shape (``<root>/drone/<subtype>/*.tfdata`` and
+# ``<root>/no_drone/**/*.tfdata``), so the same loader handles both.
+EXTRA_DATA_ROOTS: tuple[Path, ...] = (DATA_DIR / "extra",)
+
+# Subtype labels we don't want as targets for the subtype head, even though
+# we keep them as positives for the binary head. The mackenzie-jane
+# visualization repo gives us one 5-sec WAV per drone model -> not enough
+# evidence per model to learn a class. We bucket them under the literal
+# folder name "visualization_samples" and drop that label here.
+SUBTYPE_EXCLUDED_LABELS: frozenset[str] = frozenset({"visualization_samples"})
+
 EMBEDDING_DIM = 1024
 SEED = 1337
 np.random.seed(SEED)
@@ -139,7 +151,17 @@ def load_split(class_root: Path) -> tuple[np.ndarray, list[str]]:
     return X, subtypes
 
 
-def load_dataset() -> dict:
+def load_dataset(extra_roots: Iterable[Path] = EXTRA_DATA_ROOTS) -> dict:
+    """
+    Load the ERAU base dataset plus any extra roots that follow the same
+    ``<root>/drone/<subtype>/`` and ``<root>/no_drone/`` layout. Extra roots
+    that don't exist on disk are silently skipped, so the script still works
+    on a fresh checkout without the extras downloaded.
+
+    Returns a dict with keys ``X``, ``y_binary``, ``subtype_labels``,
+    ``source_labels`` (one of ``"erau"`` or the extra root name), and
+    per-subtype counts.
+    """
     drone_root = DATA_DIR / "drone"
     no_drone_root = DATA_DIR / "no_drone"
     if not drone_root.is_dir() or not no_drone_root.is_dir():
@@ -147,17 +169,38 @@ def load_dataset() -> dict:
             f"Expected {drone_root} and {no_drone_root}. "
             f"Run `python download_data.py` first."
         )
+
     X_drone, sub_drone = load_split(drone_root)
     X_nodrone, sub_nodrone = load_split(no_drone_root)
+    source_drone = ["erau"] * len(X_drone)
+    source_nodrone = ["erau"] * len(X_nodrone)
+
+    for root in extra_roots:
+        root = Path(root)
+        extra_drone = root / "drone"
+        extra_nodrone = root / "no_drone"
+        if extra_drone.is_dir():
+            xd, sd = load_split(extra_drone)
+            X_drone = np.concatenate([X_drone, xd], axis=0)
+            sub_drone += sd
+            source_drone += [root.name] * len(xd)
+        if extra_nodrone.is_dir():
+            xn, sn = load_split(extra_nodrone)
+            X_nodrone = np.concatenate([X_nodrone, xn], axis=0)
+            sub_nodrone += sn
+            source_nodrone += [root.name] * len(xn)
+
     X = np.concatenate([X_drone, X_nodrone], axis=0)
     y_binary = np.concatenate(
         [np.ones(len(X_drone), dtype=np.int32), np.zeros(len(X_nodrone), dtype=np.int32)]
     )
     subtype_labels = sub_drone + ["no_drone"] * len(X_nodrone)
+    source_labels = source_drone + source_nodrone
     return {
         "X": X,
         "y_binary": y_binary,
         "subtype_labels": subtype_labels,
+        "source_labels": source_labels,
         "drone_subtype_counts": {s: sub_drone.count(s) for s in sorted(set(sub_drone))},
         "n_drone": len(X_drone),
         "n_no_drone": len(X_nodrone),
@@ -231,9 +274,13 @@ def _export_tflite(keras_path: Path, tflite_path: Path) -> None:
 def train_binary(ds: dict) -> dict:
     print("\n=== Binary classifier: drone vs no_drone ===")
     X, y = ds["X"], ds["y_binary"]
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, stratify=y, random_state=SEED
+    sources = np.array(ds["source_labels"])
+    indices = np.arange(len(X))
+    idx_train, idx_test, y_train, y_test = train_test_split(
+        indices, y, test_size=0.2, stratify=y, random_state=SEED
     )
+    X_train, X_test = X[idx_train], X[idx_test]
+    sources_test = sources[idx_test]
     n_pos = int(y_train.sum())
     n_neg = len(y_train) - n_pos
     class_weight = {0: len(y_train) / (2.0 * n_neg), 1: len(y_train) / (2.0 * n_pos)}
@@ -268,6 +315,25 @@ def train_binary(ds: dict) -> dict:
     }
     cm = confusion_matrix(y_test, preds)
     metrics["confusion_matrix"] = cm.tolist()
+
+    # Per-source breakdown: how does the binary classifier do on each origin
+    # dataset? Surfaces whether the new data helps or hurts ERAU eval.
+    per_source: dict[str, dict] = {}
+    for src in sorted(set(sources_test.tolist())):
+        mask = sources_test == src
+        if not mask.any():
+            continue
+        y_s = y_test[mask]
+        p_s = preds[mask]
+        per_source[src] = {
+            "n": int(mask.sum()),
+            "n_pos": int(y_s.sum()),
+            "accuracy": float(accuracy_score(y_s, p_s)),
+            "precision": float(precision_score(y_s, p_s, zero_division=0)),
+            "recall": float(recall_score(y_s, p_s, zero_division=0)),
+            "f1": float(f1_score(y_s, p_s, zero_division=0)),
+        }
+    metrics["per_source"] = per_source
     print(json.dumps(metrics, indent=2))
 
     _save_confusion(cm, ["no_drone", "drone"], MODEL_DIR / "confusion_binary.png",
@@ -282,10 +348,25 @@ def train_binary(ds: dict) -> dict:
 
 def train_subtype(ds: dict) -> dict:
     print("\n=== Subtype classifier ===")
-    labels = sorted(set(ds["subtype_labels"]))
+    # Exclude buckets that can't form a real class (e.g. one clip per drone
+    # model from the visualization repo). They stay in the binary head but
+    # are removed before the subtype split.
+    keep_mask = np.array(
+        [lab not in SUBTYPE_EXCLUDED_LABELS for lab in ds["subtype_labels"]]
+    )
+    subtype_labels_kept = [
+        lab for lab, k in zip(ds["subtype_labels"], keep_mask) if k
+    ]
+    if len(subtype_labels_kept) != len(ds["subtype_labels"]):
+        dropped = len(ds["subtype_labels"]) - len(subtype_labels_kept)
+        print(
+            f"  Excluding {dropped} rows with labels in {sorted(SUBTYPE_EXCLUDED_LABELS)}"
+        )
+
+    labels = sorted(set(subtype_labels_kept))
     label_to_idx = {lab: i for i, lab in enumerate(labels)}
-    y = np.array([label_to_idx[l] for l in ds["subtype_labels"]], dtype=np.int32)
-    X = ds["X"]
+    y = np.array([label_to_idx[l] for l in subtype_labels_kept], dtype=np.int32)
+    X = ds["X"][keep_mask]
 
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, stratify=y, random_state=SEED
@@ -359,6 +440,10 @@ def main() -> int:
     print(f"  drone:    {ds['n_drone']}")
     print(f"  no_drone: {ds['n_no_drone']}")
     print(f"  drone subtype counts: {ds['drone_subtype_counts']}")
+    src_counts: dict[str, int] = {}
+    for s in ds["source_labels"]:
+        src_counts[s] = src_counts.get(s, 0) + 1
+    print(f"  by source: {src_counts}")
 
     if args.mode in ("both", "binary"):
         train_binary(ds)
