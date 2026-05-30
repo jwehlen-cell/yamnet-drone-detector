@@ -114,20 +114,32 @@ def _yt_seg(idx: int) -> Path:
     return matches[0] if matches else YT_SEG / f"drone_{idx:02d}_MISSING.wav"
 
 
-# YouTube short Nl_DgGbxCbw, 6 distinct drone segments produced by
-# extract_youtube_segments.py (energy-based segmentation of the 16.4s clip,
-# ranked by peak sliding-window drone_prob and trimmed to the top 6).
-# Ground truth label per drone is unknown (the clip identifies them
-# visually, not via metadata) — leaving gt="?" makes the evaluator treat
-# these as untrained, so the summary records whether the binary head
-# triggers, NOT whether the subtype is correct.
+# YouTube short Nl_DgGbxCbw — seven distinct DJI drones in temporal order
+# per external ground truth. Re-run extract_youtube_segments.py with
+# `--target-segments 7 --min-segment-ms 750` to regenerate the WAVs.
+#
+# Ground truth (drone-by-drone), in source-clip order:
+#   1. DJI Mavic Mini 2   (trained as `mavicmini`)
+#   2. DJI Neo            (no trained class)
+#   3. DJI Avata 2        (no trained class)
+#   4. DJI Avata 360      (no trained class)
+#   5. DJI Mini 5 Pro     (no trained class)
+#   6. DJI Air 3S         (no trained class — current model misses entirely)
+#   7. DJI Mavic 4 Pro    (no trained class)
+#
+# Six of the seven drones in this clip are DJI models the current 6-class
+# characterizer was never trained on; they're useful future-training
+# targets if labeled audio becomes available. Until then, gt strings for
+# items 2-7 are the human-readable display name and in_training=False
+# (so the evaluator records binary triggering, not subtype correctness).
 CASES += [
-    (_yt_seg(1), "?", False, "YouTube Nl_DgGbxCbw seg 1 (t=0.00-1.20s)"),
-    (_yt_seg(2), "?", False, "YouTube Nl_DgGbxCbw seg 2 (t=1.00-2.18s)"),
-    (_yt_seg(3), "?", False, "YouTube Nl_DgGbxCbw seg 3 (t=3.50-5.08s)"),
-    (_yt_seg(4), "?", False, "YouTube Nl_DgGbxCbw seg 4 (t=6.26-8.02s)"),
-    (_yt_seg(5), "?", False, "YouTube Nl_DgGbxCbw seg 5 (t=9.50-10.82s)"),
-    (_yt_seg(6), "?", False, "YouTube Nl_DgGbxCbw seg 6 (t=14.66-16.41s)"),
+    (_yt_seg(1), "mavicmini",          True,  "YouTube seg 1 (t=0.00-1.20s) — DJI Mavic Mini 2"),
+    (_yt_seg(2), "DJI Neo",            False, "YouTube seg 2 (t=1.00-2.18s) — DJI Neo (untrained)"),
+    (_yt_seg(3), "DJI Avata 2",        False, "YouTube seg 3 (t=3.50-5.08s) — DJI Avata 2 (untrained)"),
+    (_yt_seg(4), "DJI Avata 360",      False, "YouTube seg 4 (t=6.26-8.02s) — DJI Avata 360 (untrained)"),
+    (_yt_seg(5), "DJI Mini 5 Pro",     False, "YouTube seg 5 (t=9.50-10.82s) — DJI Mini 5 Pro (untrained)"),
+    (_yt_seg(6), "DJI Air 3S",         False, "YouTube seg 6 (t=11.66-13.30s) — DJI Air 3S (untrained)"),
+    (_yt_seg(7), "DJI Mavic 4 Pro",    False, "YouTube seg 7 (t=14.66-16.41s) — DJI Mavic 4 Pro (untrained)"),
 ]
 
 
