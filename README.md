@@ -255,6 +255,10 @@ detect_drone_cli.py         # Thin CLI wrapper for local testing
 train.py                    # Training script (binary + subtype)
 download_data.py            # ERAU dataset downloader
 embed_extra_audio.py        # Raw WAV -> YAMNet embedding for extra datasets
+evaluate_real_samples.py    # Runs the trained heads against a curated set of
+                            #   real labeled drone WAVs (trained / untrained /
+                            #   negative) and prints per-sample verdicts. Useful
+                            #   smoke test after re-training.
 deployment_info.json        # Summary: model paths, input format, provenance
 requirements.txt
 models/
