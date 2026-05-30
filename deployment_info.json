@@ -9,11 +9,11 @@
       "labels": ["no_drone", "drone"],
       "output_kind": "sigmoid",
       "default_threshold": 0.7,
-      "test_accuracy": 0.9527054108216433,
-      "test_precision": 0.9297297297297298,
-      "test_recall": 0.9419496166484118,
-      "test_f1": 0.9357997823721437,
-      "test_set_size": 2495
+      "test_accuracy": 0.9592520234440413,
+      "test_precision": 0.9644165358451072,
+      "test_recall": 0.9593961478396669,
+      "test_f1": 0.9618997912317327,
+      "test_set_size": 3583
     },
     "subtype": {
       "keras": "models/drone_classifier_subtype.keras",
@@ -23,11 +23,11 @@
       "output_kind": "softmax",
       "default_threshold": 0.7,
       "labels": ["bebop", "mambo", "matrice", "mavic3", "mavicmini", "no_drone"],
-      "test_accuracy": 0.9360932475884244,
-      "test_precision_macro": 0.8985200715463875,
-      "test_recall_macro": 0.9347579477593687,
-      "test_f1_macro": 0.9157881653330638,
-      "test_set_size": 2488
+      "test_accuracy": 0.937694704049844,
+      "test_precision_macro": 0.9081,
+      "test_recall_macro": 0.9394,
+      "test_f1_macro": 0.9224,
+      "test_set_size": 2568
     }
   },
   "input_format": {
@@ -64,6 +64,20 @@
       "url": "https://github.com/mackenzie-jane/drone-visualization",
       "license": "No explicit license; cite arXiv:2509.04715",
       "role": "32 single-clip drone-model samples used as binary positives only"
+    },
+    {
+      "title": "DroneAudioSet (Augmented Human Lab / Bosch, 2025)",
+      "publisher": "Ahlab Drone Project (arXiv:2510.15383)",
+      "url": "https://huggingface.co/datasets/ahlab-drone-project/DroneAudioSet",
+      "license": "MIT",
+      "role": "5,040 1-sec rotor-noise positives chunked from the drone-only/ subset. SAR dataset (no drone-type labels); fed to the binary head only via SUBTYPE_EXCLUDED_LABELS."
+    },
+    {
+      "title": "ESC-50 exterior-sound confounders (classes 40-49)",
+      "publisher": "Karol J. Piczak, 2015",
+      "url": "https://github.com/karoldvl/ESC-50",
+      "license": "CC BY-NC 4.0",
+      "role": "400 targeted false-positive confounders: helicopter, chainsaw, siren, car_horn, engine, train, church_bells, airplane, fireworks, hand_saw (40 each). Drives the binary precision improvement."
     }
   ]
 }

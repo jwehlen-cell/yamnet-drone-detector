@@ -138,6 +138,8 @@ def main() -> int:
 
     saraalemadi = RAW_ROOT / "DroneAudioDataset"
     vis_samples = RAW_ROOT / "drone-visualization" / "public" / "droneAudio"
+    esc50_conf  = RAW_ROOT / "esc50_confounders"
+    droneaudset = RAW_ROOT / "droneaudioset" / "drone-only-wavs"
 
     missing = [p for p in (saraalemadi, vis_samples) if not p.is_dir()]
     if missing:
@@ -189,6 +191,34 @@ def main() -> int:
         OUT_ROOT / "no_drone" / "esc50_noise",
         args.limit_per_dir if args.limit_per_dir else 2000,
     )
+
+    # Targeted confounders: full ESC-50 exterior-sound classes 40-49
+    # (helicopter, chainsaw, siren, car_horn, engine, train, church_bells,
+    # airplane, fireworks, hand_saw). Each class has 40 clips; saraalemadi's
+    # pool only includes ~21 each from classes 40-44, so adding these 400
+    # roughly triples confounder coverage for the binary head and adds
+    # 200 clips for classes 45-49 it had never seen.
+    if esc50_conf.is_dir():
+        summary["esc50_confounders"] = _process_dir(
+            embedder,
+            esc50_conf,
+            OUT_ROOT / "no_drone" / "esc50_confounders",
+            args.limit_per_dir,
+        )
+
+    # DroneAudioset (Bosch/AHL 2025) — pure rotor recordings from many
+    # drone+throttle+environment combinations, downmixed to mono and
+    # sliced into 1-sec chunks by /tmp/dl_droneaudioset.py. No subtype
+    # labels available in the source dataset, so these go into the
+    # binary head only via a dedicated "droneaudioset" subfolder which
+    # SUBTYPE_EXCLUDED_LABELS in train.py drops before subtype training.
+    if droneaudset.is_dir():
+        summary["droneaudioset"] = _process_dir(
+            embedder,
+            droneaudset,
+            OUT_ROOT / "drone" / "droneaudioset",
+            args.limit_per_dir,
+        )
 
     print("\n=== Summary (ok, skipped) ===")
     for k, (ok, sk) in summary.items():

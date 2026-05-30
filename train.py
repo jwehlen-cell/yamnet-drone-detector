@@ -57,8 +57,15 @@ EXTRA_DATA_ROOTS: tuple[Path, ...] = (DATA_DIR / "extra",)
 # we keep them as positives for the binary head. The mackenzie-jane
 # visualization repo gives us one 5-sec WAV per drone model -> not enough
 # evidence per model to learn a class. We bucket them under the literal
-# folder name "visualization_samples" and drop that label here.
-SUBTYPE_EXCLUDED_LABELS: frozenset[str] = frozenset({"visualization_samples"})
+# folder name "visualization_samples" and drop that label here. The
+# DroneAudioset (Bosch/AHL 2025) drone-only corpus is a search-and-rescue
+# dataset where the labels describe the source sounds the drone is trying
+# to detect rather than which drone is recording — we bucket those under
+# "droneaudioset" and similarly exclude from subtype training while still
+# using them as binary positives.
+SUBTYPE_EXCLUDED_LABELS: frozenset[str] = frozenset(
+    {"visualization_samples", "droneaudioset"}
+)
 
 EMBEDDING_DIM = 1024
 SEED = 1337
