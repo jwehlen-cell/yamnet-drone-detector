@@ -66,6 +66,27 @@ def fmt(label: str) -> str:
     return f"{maker} {model}".strip()
 
 
+# Operational category thresholds. Defaults match the production
+# INFERENCE_DETECTION_THRESHOLD (0.5) for the trigger.
+DRONE_TRIGGER = 0.5
+UNCERTAIN_LOW = 0.2
+
+
+def categorize(drone_p: float, subtype_top: str) -> tuple[str, str]:
+    """(binary, subtype) -> (category_token, display_string).
+
+    See evaluate_real_samples.py::categorize for the full definition;
+    duplicated here so the extractor runs standalone.
+    """
+    if drone_p >= DRONE_TRIGGER:
+        if subtype_top == "no_drone":
+            return "unknown_drone", "Unknown drone"
+        return "known_drone", fmt(subtype_top)
+    if drone_p >= UNCERTAIN_LOW:
+        return "unknown_source", "Unknown source"
+    return "no_drone", "no_drone"
+
+
 def _ensure_source() -> None:
     """Download (or copy from /tmp cache) the YouTube clip if absent."""
     if SOURCE_WAV.exists():
@@ -346,6 +367,8 @@ def main() -> int:
         c = _characterize(yam, binary, subtype, labels, chunk)
         path = SEG_DIR / f"drone_{i:02d}_t{int(s*1000):05d}-{int(e*1000):05d}.wav"
         sf.write(str(path), chunk, SR, subtype="PCM_16")
+        mean_cat, mean_cat_display = categorize(c["mean_drone_p"], c["mean_top"])
+        peak_cat, peak_cat_display = categorize(c["peak_drone_p"], c["peak_top"])
         row = {
             "idx": i,
             "path": str(path.relative_to(ROOT)),
@@ -358,16 +381,20 @@ def main() -> int:
             "mean_top": c["mean_top"],
             "mean_top_display": fmt(c["mean_top"]),
             "mean_top_p": round(c["mean_top_p"], 4),
+            "mean_category": mean_cat,
+            "mean_category_display": mean_cat_display,
             "peak_drone_p": round(c["peak_drone_p"], 4),
             "peak_top": c["peak_top"],
             "peak_top_display": fmt(c["peak_top"]),
             "peak_top_p": round(c["peak_top_p"], 4),
+            "peak_category": peak_cat,
+            "peak_category_display": peak_cat_display,
         }
         summary.append(row)
         print(
             f"  segment {i}  t={s:6.2f}-{e:6.2f}s  "
-            f"mean drone_p={c['mean_drone_p']:.3f} top={fmt(c['mean_top']):<22}({c['mean_top_p']:.2f})  "
-            f"peak drone_p={c['peak_drone_p']:.3f} top={fmt(c['peak_top']):<22}({c['peak_top_p']:.2f})"
+            f"mean drone_p={c['mean_drone_p']:.3f} -> {mean_cat_display:<18} "
+            f"peak drone_p={c['peak_drone_p']:.3f} -> {peak_cat_display:<18}"
         )
 
     (OUT_DIR / "summary.json").write_text(json.dumps(summary, indent=2))

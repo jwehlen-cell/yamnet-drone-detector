@@ -61,6 +61,43 @@ def fmt(label: str) -> str:
     return f"{maker} {model}".strip()
 
 
+# Operational category thresholds. Defaults match the production
+# INFERENCE_DETECTION_THRESHOLD (0.5) for the trigger, plus a 0.2-0.5
+# uncertainty band that surfaces possibly-drone audio outside the
+# triggered set.
+DRONE_TRIGGER = 0.5
+UNCERTAIN_LOW = 0.2
+
+
+def categorize(
+    drone_p: float, subtype_top: str, subtype_top_p: float
+) -> tuple[str, str]:
+    """Map (binary head, subtype head) into one of four ops categories.
+
+    Returns (category_token, display_string).
+
+      known_drone   : binary head fires AND subtype matches a trained
+                      drone class (display = "<maker> <model>")
+      unknown_drone : binary head fires AND subtype top is "no_drone"
+                      (the binary head detected a drone, but the
+                      characterizer doesn't recognize it as any trained
+                      model — typical for the post-2024 DJI lineup)
+      unknown_source: binary head doesn't fire but drone_prob is above
+                      UNCERTAIN_LOW (out-of-distribution input —
+                      something the model has never confidently seen
+                      but isn't confidently rejecting either)
+      no_drone      : binary head below UNCERTAIN_LOW (confidently
+                      not a drone)
+    """
+    if drone_p >= DRONE_TRIGGER:
+        if subtype_top == "no_drone":
+            return "unknown_drone", "Unknown drone"
+        return "known_drone", fmt(subtype_top)
+    if drone_p >= UNCERTAIN_LOW:
+        return "unknown_source", "Unknown source"
+    return "no_drone", "no_drone"
+
+
 # Curated test cases. ``in_training=True`` means the *drone model* was a
 # subtype class during training; we expect the top-1 to match ``gt``.
 # Same-family / untrained rows still expect drone_prob >= 0.5 but the
@@ -173,8 +210,8 @@ def main() -> int:
 
     print("\n=== Real labeled samples ===\n")
     header = (
-        f"{'GT':<18}  {'drone_p':>7}  {'characterizer top':<22}  "
-        f"{'top_p':>5}  {'dur':>5}  description"
+        f"{'GT':<18}  {'drone_p':>7}  {'category':<18}  "
+        f"{'characterizer top':<22}  {'top_p':>5}  {'dur':>5}  description"
     )
     print(header)
     print("-" * len(header))
@@ -186,6 +223,7 @@ def main() -> int:
     neg_correct = 0
     neg_total = 0
     collapse_targets: Counter[str] = Counter()
+    category_counts: Counter[str] = Counter()
     missing: list[Path] = []
 
     for path, gt, in_training, desc in CASES:
@@ -198,6 +236,8 @@ def main() -> int:
         gt_display = fmt(gt) if gt in DISPLAY else gt
         pred_display = fmt(top_lab)
         dur = audio.size / sr
+        category_token, category_display = categorize(drone_p, top_lab, top_p)
+        category_counts[category_token] += 1
 
         if gt == "no_drone":
             neg_total += 1
@@ -217,8 +257,8 @@ def main() -> int:
                 collapse_targets[top_lab] += 1
 
         print(
-            f"{gt_display:<18}  {drone_p:>7.3f}  {pred_display:<22}  "
-            f"{top_p:>5.3f}  {dur:>5.2f}  {status} {desc}"
+            f"{gt_display:<18}  {drone_p:>7.3f}  {category_display:<18}  "
+            f"{pred_display:<22}  {top_p:>5.3f}  {dur:>5.2f}  {status} {desc}"
         )
 
     print("\n=== Summary ===")
@@ -232,6 +272,14 @@ def main() -> int:
                 print(f"    {fmt(lab):<22} {n}")
     if neg_total:
         print(f"Non-drone negative:      {neg_correct}/{neg_total} correctly rejected")
+
+    print(
+        f"\nCategory split (binary trigger {DRONE_TRIGGER}, uncertain band "
+        f"[{UNCERTAIN_LOW},{DRONE_TRIGGER})):"
+    )
+    for cat in ("known_drone", "unknown_drone", "unknown_source", "no_drone"):
+        if cat in category_counts:
+            print(f"  {cat:<16} {category_counts[cat]}")
 
     if missing:
         print(
