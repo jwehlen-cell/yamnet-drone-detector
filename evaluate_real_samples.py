@@ -41,6 +41,7 @@ ROOT = Path(__file__).parent
 MODELS = ROOT / "models"
 SARA = ROOT / "data" / "extra_raw" / "DroneAudioDataset"
 VIS = ROOT / "data" / "extra_raw" / "drone-visualization" / "public" / "droneAudio"
+YT_SEG = ROOT / "data" / "extra_raw" / "youtube_Nl_DgGbxCbw" / "segments"
 
 # Mapping from subtype token -> ("Maker", "Model") display name. The token
 # is what the classifier emits and what labels.json contains; the display
@@ -99,6 +100,34 @@ CASES: list[tuple[Path, str, bool, str]] = [
     # --- Non-drone negative ---
     (SARA / "Binary_Drone_Audio/unknown/1-100032-A-00.wav",
      "no_drone", True, "ESC-50 background noise — should NOT trigger"),
+
+]
+
+
+def _yt_seg(idx: int) -> Path:
+    """Resolve YouTube segment WAV by index. Float rounding in
+    extract_youtube_segments.py means end timestamps can drift by 1 ms,
+    so match on the leading ``drone_NN_`` prefix rather than a fixed name."""
+    if not YT_SEG.is_dir():
+        return YT_SEG / f"drone_{idx:02d}_MISSING.wav"
+    matches = sorted(YT_SEG.glob(f"drone_{idx:02d}_*.wav"))
+    return matches[0] if matches else YT_SEG / f"drone_{idx:02d}_MISSING.wav"
+
+
+# YouTube short Nl_DgGbxCbw, 6 distinct drone segments produced by
+# extract_youtube_segments.py (energy-based segmentation of the 16.4s clip,
+# ranked by peak sliding-window drone_prob and trimmed to the top 6).
+# Ground truth label per drone is unknown (the clip identifies them
+# visually, not via metadata) — leaving gt="?" makes the evaluator treat
+# these as untrained, so the summary records whether the binary head
+# triggers, NOT whether the subtype is correct.
+CASES += [
+    (_yt_seg(1), "?", False, "YouTube Nl_DgGbxCbw seg 1 (t=0.00-1.20s)"),
+    (_yt_seg(2), "?", False, "YouTube Nl_DgGbxCbw seg 2 (t=1.00-2.18s)"),
+    (_yt_seg(3), "?", False, "YouTube Nl_DgGbxCbw seg 3 (t=3.50-5.08s)"),
+    (_yt_seg(4), "?", False, "YouTube Nl_DgGbxCbw seg 4 (t=6.26-8.02s)"),
+    (_yt_seg(5), "?", False, "YouTube Nl_DgGbxCbw seg 5 (t=9.50-10.82s)"),
+    (_yt_seg(6), "?", False, "YouTube Nl_DgGbxCbw seg 6 (t=14.66-16.41s)"),
 ]
 
 
