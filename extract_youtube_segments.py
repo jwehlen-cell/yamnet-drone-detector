@@ -46,6 +46,25 @@ SOURCE_WAV = OUT_DIR / "source.wav"
 YOUTUBE_URL = "https://www.youtube.com/shorts/Nl_DgGbxCbw"
 SR = 16_000
 
+# Maker + model display names per trained subtype token. The classifier
+# emits the short token (matrice / mavic3 / mavicmini / mambo / bebop /
+# no_drone); this mapping is the source of truth for the human-readable
+# "<maker> <model>" string used in console output and summary.json.
+# Kept in sync with the same table in evaluate_real_samples.py.
+DISPLAY = {
+    "bebop":     ("Parrot", "Bebop"),
+    "mambo":     ("Parrot", "Mambo"),
+    "matrice":   ("DJI",    "Matrice M100"),
+    "mavic3":    ("DJI",    "Mavic 3"),
+    "mavicmini": ("DJI",    "Mavic Mini 2"),
+    "no_drone":  ("",       "no_drone"),
+}
+
+
+def fmt(label: str) -> str:
+    maker, model = DISPLAY.get(label, ("?", label))
+    return f"{maker} {model}".strip()
+
 
 def _ensure_source() -> None:
     """Download (or copy from /tmp cache) the YouTube clip if absent."""
@@ -337,16 +356,18 @@ def main() -> int:
             "active_window_end_s": round(e_raw, 3),
             "mean_drone_p": round(c["mean_drone_p"], 4),
             "mean_top": c["mean_top"],
+            "mean_top_display": fmt(c["mean_top"]),
             "mean_top_p": round(c["mean_top_p"], 4),
             "peak_drone_p": round(c["peak_drone_p"], 4),
             "peak_top": c["peak_top"],
+            "peak_top_display": fmt(c["peak_top"]),
             "peak_top_p": round(c["peak_top_p"], 4),
         }
         summary.append(row)
         print(
             f"  segment {i}  t={s:6.2f}-{e:6.2f}s  "
-            f"mean drone_p={c['mean_drone_p']:.3f} top={c['mean_top']}({c['mean_top_p']:.2f})   "
-            f"peak drone_p={c['peak_drone_p']:.3f} top={c['peak_top']}({c['peak_top_p']:.2f})"
+            f"mean drone_p={c['mean_drone_p']:.3f} top={fmt(c['mean_top']):<22}({c['mean_top_p']:.2f})  "
+            f"peak drone_p={c['peak_drone_p']:.3f} top={fmt(c['peak_top']):<22}({c['peak_top_p']:.2f})"
         )
 
     (OUT_DIR / "summary.json").write_text(json.dumps(summary, indent=2))
