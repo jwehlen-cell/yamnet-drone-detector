@@ -23,6 +23,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 from typing import Iterable
 
@@ -40,7 +41,7 @@ from sklearn.metrics import (
     precision_score,
     recall_score,
 )
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GroupShuffleSplit, train_test_split
 from tqdm import tqdm
 
 ROOT = Path(__file__).parent
@@ -64,7 +65,7 @@ EXTRA_DATA_ROOTS: tuple[Path, ...] = (DATA_DIR / "extra",)
 # "droneaudioset" and similarly exclude from subtype training while still
 # using them as binary positives.
 SUBTYPE_EXCLUDED_LABELS: frozenset[str] = frozenset(
-    {"visualization_samples", "droneaudioset"}
+    {"visualization_samples", "droneaudioset", "qst_detections", "usafa_dfec"}
 )
 
 EMBEDDING_DIM = 1024
@@ -130,18 +131,34 @@ def _parse_one_tfdata(path: Path) -> np.ndarray:
     raise ValueError(f"Could not parse embeddings from {path}")
 
 
-def load_split(class_root: Path) -> tuple[np.ndarray, list[str]]:
+# Files produced by embed_detection_sets.py are named "<clip-stem>_wNNNN.tfdata",
+# one per ~1 s window of a longer recording. Stripping the window suffix yields
+# a per-source-clip group key so all windows of one clip stay on the same side
+# of the train/test split (no window-level leakage). Files without the suffix
+# (ERAU, whole-file extras) are each their own group.
+_WINDOW_SUFFIX_RE = re.compile(r"_w\d+$")
+
+
+def _group_key(class_root: Path, p: Path) -> str:
+    rel = p.relative_to(class_root)
+    stem = _WINDOW_SUFFIX_RE.sub("", rel.stem)
+    return str(Path(class_root.name) / rel.parent / stem)
+
+
+def load_split(class_root: Path) -> tuple[np.ndarray, list[str], list[str]]:
     """
     For one top-level class folder (e.g. data/drone), load all .tfdata files,
     average-pool the time dimension to a single 1024-vector per file, and
-    return (X, subtype_names) where subtype_names is the immediate
-    subdirectory name for each row (e.g. 'DJI_Matrice_M100').
+    return (X, subtype_names, group_keys) where subtype_names is the immediate
+    subdirectory name for each row (e.g. 'DJI_Matrice_M100') and group_keys
+    identifies the source clip (see _group_key) for leak-free splitting.
     """
     files = _list_tfdata_files(class_root)
     if not files:
         raise SystemExit(f"No .tfdata files found under {class_root}")
     X = np.zeros((len(files), EMBEDDING_DIM), dtype=np.float32)
     subtypes: list[str] = []
+    groups: list[str] = []
     skipped = 0
     for i, p in enumerate(tqdm(files, desc=f"loading {class_root.name}")):
         try:
@@ -152,10 +169,11 @@ def load_split(class_root: Path) -> tuple[np.ndarray, list[str]]:
         X[i] = emb.mean(axis=0)
         rel = p.relative_to(class_root)
         subtypes.append(rel.parts[0] if len(rel.parts) > 1 else class_root.name)
+        groups.append(_group_key(class_root, p))
     if skipped:
         print(f"  Skipped {skipped} unparseable files in {class_root.name}")
         X = X[: len(subtypes)]
-    return X, subtypes
+    return X, subtypes, groups
 
 
 def load_dataset(extra_roots: Iterable[Path] = EXTRA_DATA_ROOTS) -> dict:
@@ -177,8 +195,8 @@ def load_dataset(extra_roots: Iterable[Path] = EXTRA_DATA_ROOTS) -> dict:
             f"Run `python download_data.py` first."
         )
 
-    X_drone, sub_drone = load_split(drone_root)
-    X_nodrone, sub_nodrone = load_split(no_drone_root)
+    X_drone, sub_drone, grp_drone = load_split(drone_root)
+    X_nodrone, sub_nodrone, grp_nodrone = load_split(no_drone_root)
     source_drone = ["erau"] * len(X_drone)
     source_nodrone = ["erau"] * len(X_nodrone)
 
@@ -187,14 +205,16 @@ def load_dataset(extra_roots: Iterable[Path] = EXTRA_DATA_ROOTS) -> dict:
         extra_drone = root / "drone"
         extra_nodrone = root / "no_drone"
         if extra_drone.is_dir():
-            xd, sd = load_split(extra_drone)
+            xd, sd, gd = load_split(extra_drone)
             X_drone = np.concatenate([X_drone, xd], axis=0)
             sub_drone += sd
+            grp_drone += gd
             source_drone += [root.name] * len(xd)
         if extra_nodrone.is_dir():
-            xn, sn = load_split(extra_nodrone)
+            xn, sn, gn = load_split(extra_nodrone)
             X_nodrone = np.concatenate([X_nodrone, xn], axis=0)
             sub_nodrone += sn
+            grp_nodrone += gn
             source_nodrone += [root.name] * len(xn)
 
     X = np.concatenate([X_drone, X_nodrone], axis=0)
@@ -203,11 +223,13 @@ def load_dataset(extra_roots: Iterable[Path] = EXTRA_DATA_ROOTS) -> dict:
     )
     subtype_labels = sub_drone + ["no_drone"] * len(X_nodrone)
     source_labels = source_drone + source_nodrone
+    group_labels = grp_drone + grp_nodrone
     return {
         "X": X,
         "y_binary": y_binary,
         "subtype_labels": subtype_labels,
         "source_labels": source_labels,
+        "group_labels": group_labels,
         "drone_subtype_counts": {s: sub_drone.count(s) for s in sorted(set(sub_drone))},
         "n_drone": len(X_drone),
         "n_no_drone": len(X_nodrone),
@@ -282,10 +304,12 @@ def train_binary(ds: dict) -> dict:
     print("\n=== Binary classifier: drone vs no_drone ===")
     X, y = ds["X"], ds["y_binary"]
     sources = np.array(ds["source_labels"])
-    indices = np.arange(len(X))
-    idx_train, idx_test, y_train, y_test = train_test_split(
-        indices, y, test_size=0.2, stratify=y, random_state=SEED
-    )
+    groups = np.array(ds["group_labels"])
+    # Group-aware split: all windows of one source clip stay together, so a
+    # long recording sliced into many ~1 s windows can't leak across the split.
+    gss = GroupShuffleSplit(n_splits=1, test_size=0.2, random_state=SEED)
+    idx_train, idx_test = next(gss.split(X, y, groups))
+    y_train, y_test = y[idx_train], y[idx_test]
     X_train, X_test = X[idx_train], X[idx_test]
     sources_test = sources[idx_test]
     n_pos = int(y_train.sum())

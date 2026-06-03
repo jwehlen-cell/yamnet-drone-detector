@@ -9,11 +9,13 @@
       "labels": ["no_drone", "drone"],
       "output_kind": "sigmoid",
       "default_threshold": 0.7,
-      "test_accuracy": 0.9592520234440413,
-      "test_precision": 0.9644165358451072,
-      "test_recall": 0.9593961478396669,
-      "test_f1": 0.9618997912317327,
-      "test_set_size": 3583
+      "eval_split": "clip-level GroupShuffleSplit (all ~1s windows of a source clip kept on one side; no window-level leakage)",
+      "test_accuracy": 0.912751677852349,
+      "test_precision": 0.8911439114391144,
+      "test_recall": 0.9722222222222222,
+      "test_f1": 0.9299191374663073,
+      "test_set_size": 4172,
+      "note": "Trained on ERAU+extra plus field data (QST sensor detections, USAFA DFEC). Numbers are on a harder, more realistic test distribution than the prior ERAU+extra-only eval, and are NOT directly comparable to it. vs the prior eval, recall rises (~0.96 -> 0.97) but precision drops (~0.96 -> 0.89): the noisy field positives make the detector fire more eagerly. A fair shipped-vs-new A/B on one identical held-out set is still TODO."
     },
     "subtype": {
       "keras": "models/drone_classifier_subtype.keras",
@@ -23,11 +25,13 @@
       "output_kind": "softmax",
       "default_threshold": 0.7,
       "labels": ["bebop", "mambo", "matrice", "mavic3", "mavicmini", "no_drone"],
-      "test_accuracy": 0.937694704049844,
-      "test_precision_macro": 0.9081,
-      "test_recall_macro": 0.9394,
-      "test_f1_macro": 0.9224,
-      "test_set_size": 2568
+      "eval_split": "stratified (subtype excludes the windowed field buckets, so no leakage to correct)",
+      "test_accuracy": 0.9258540372670807,
+      "test_precision_macro": 0.8945394145446691,
+      "test_recall_macro": 0.934904958310533,
+      "test_f1_macro": 0.9117,
+      "test_set_size": 2576,
+      "note": "Label set unchanged: the new field drone types (Falcon 450, Teal 2, Fortem DroneHunter) have too few clips to form subtype classes, so they are binary positives only (SUBTYPE_EXCLUDED_LABELS). Small shift vs prior is run-to-run init noise."
     }
   },
   "input_format": {
@@ -78,6 +82,18 @@
       "url": "https://github.com/karoldvl/ESC-50",
       "license": "CC BY-NC 4.0",
       "role": "400 targeted false-positive confounders: helicopter, chainsaw, siren, car_horn, engine, train, church_bells, airplane, fireworks, hand_saw (40 each). Drives the binary precision improvement."
+    },
+    {
+      "title": "QST sensor detections (Argos field deployment)",
+      "publisher": "Internal (QST API, project-argos)",
+      "license": "Internal / not for redistribution",
+      "role": "87 real drone-detection clips (sensors SH003-SH016, 2026-04), pulled via QST and sliced into 2,959 ~1s windows. Binary positives only (field 'quadcopter' detections, no model subtype; 8 kHz-origin). Real-world deployment distribution."
+    },
+    {
+      "title": "USAF Academy DFEC drone-audio set",
+      "publisher": "USAF Academy DFEC (delivered via DOD SAFE, 2026-02-13)",
+      "license": "Internal / not for redistribution",
+      "role": "11 recordings: Falcon 450 / Teal 2 / Fortem DroneHunter (70 windows, binary positives only) + box-fan and tow-plane hard-negatives (40 windows, no_drone)."
     }
   ]
 }

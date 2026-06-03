@@ -11,6 +11,13 @@ env/
 data/*
 !data/.gitkeep
 
+# Internal field audio (not for redistribution; regenerable via the scripts).
+# The embedding/pull scripts ARE tracked; the raw audio + metadata are not.
+detection-audio/
+detection-metadata/
+usafa-dfec-dataset/
+usafa-dfec-dataset-16k/
+
 # Build artifacts
 build/
 dist/
@@ -20,6 +27,11 @@ dist/
 checkpoints/
 runs/
 *.png.tmp
+
+# Secrets / local config (QST API credentials, etc.)
+.env
+.env.*
+!.env.example
 
 # OS / editor
 .DS_Store
