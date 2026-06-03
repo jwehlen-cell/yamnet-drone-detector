@@ -10,12 +10,12 @@
       "output_kind": "sigmoid",
       "default_threshold": 0.7,
       "eval_split": "clip-level GroupShuffleSplit (all ~1s windows of a source clip kept on one side; no window-level leakage)",
-      "test_accuracy": 0.912751677852349,
-      "test_precision": 0.8911439114391144,
-      "test_recall": 0.9722222222222222,
-      "test_f1": 0.9299191374663073,
-      "test_set_size": 4172,
-      "note": "Trained on ERAU+extra plus field data (QST sensor detections, USAFA DFEC). Numbers are on a harder, more realistic test distribution than the prior ERAU+extra-only eval, and are NOT directly comparable to it. vs the prior eval, recall rises (~0.96 -> 0.97) but precision drops (~0.96 -> 0.89): the noisy field positives make the detector fire more eagerly. A fair shipped-vs-new A/B on one identical held-out set is still TODO."
+      "test_accuracy": 0.9262722923010004,
+      "test_precision": 0.9208126036484245,
+      "test_recall": 0.937526382439848,
+      "test_f1": 0.9290943317297636,
+      "test_set_size": 4598,
+      "note": "Trained on ERAU+extra plus field data: QST sensor detections (positives), QST dead-of-night windows (no_drone negatives), and USAFA DFEC. Numbers are on a harder, more realistic test distribution than the prior ERAU+extra-only eval and are NOT directly comparable to it. A fair same-split A/B (eval_field_ab.py) shows adding field data is decisive on the deployment domain: held-out FIELD F1 0.24 (no field data) -> 0.80 (with), recall 0.14 -> 0.87. Adding the night negatives recovered clean-audio precision (extra_clean F1 regression 0.96->0.90 without negatives shrank to 0.97->0.96 with). Field-domain precision is ~0.74 at threshold 0.5; raise the threshold to trade recall for fewer false alarms."
     },
     "subtype": {
       "keras": "models/drone_classifier_subtype.keras",
@@ -25,12 +25,12 @@
       "output_kind": "softmax",
       "default_threshold": 0.7,
       "labels": ["bebop", "mambo", "matrice", "mavic3", "mavicmini", "no_drone"],
-      "eval_split": "stratified (subtype excludes the windowed field buckets, so no leakage to correct)",
-      "test_accuracy": 0.9258540372670807,
-      "test_precision_macro": 0.8945394145446691,
-      "test_recall_macro": 0.934904958310533,
-      "test_f1_macro": 0.9117,
-      "test_set_size": 2576,
+      "eval_split": "stratified (subtype excludes the windowed field-drone buckets, so no leakage to correct)",
+      "test_accuracy": 0.9490983129726586,
+      "test_precision_macro": 0.8996816967434303,
+      "test_recall_macro": 0.9438871271066867,
+      "test_f1_macro": 0.920581691312046,
+      "test_set_size": 3438,
       "note": "Label set unchanged: the new field drone types (Falcon 450, Teal 2, Fortem DroneHunter) have too few clips to form subtype classes, so they are binary positives only (SUBTYPE_EXCLUDED_LABELS). Small shift vs prior is run-to-run init noise."
     }
   },
@@ -87,7 +87,7 @@
       "title": "QST sensor detections (Argos field deployment)",
       "publisher": "Internal (QST API, project-argos)",
       "license": "Internal / not for redistribution",
-      "role": "87 real drone-detection clips (sensors SH003-SH016, 2026-04), pulled via QST and sliced into 2,959 ~1s windows. Binary positives only (field 'quadcopter' detections, no model subtype; 8 kHz-origin). Real-world deployment distribution."
+      "role": "Binary field data from the deployed SH003-SH016 sensors (Sumter SC, 2026-04), 8 kHz-origin. Positives: 87 drone-detection clips -> 2,959 ~1s windows (no model subtype). Negatives: 24 dead-of-night (01:00 local / 05:00 UTC) windows -> 4,310 no_drone windows, pulled via pull_negative_audio.py to rebalance and to provide held-out field negatives for false-alarm measurement. Real-world deployment distribution."
     },
     {
       "title": "USAF Academy DFEC drone-audio set",

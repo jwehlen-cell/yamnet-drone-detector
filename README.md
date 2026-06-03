@@ -79,13 +79,14 @@ excluded from subtype training automatically (see
 `SUBTYPE_EXCLUDED_LABELS` in `train.py`) but kept as positive examples
 for the binary head.
 
-**Field data (this branch).** Two internal sets are also folded in via
+**Field data (this branch).** Internal sets are folded in via
 `embed_detection_sets.py`, which slices long recordings into ~1 s windows:
-QST sensor detections (`data/extra/drone/qst_detections/`, binary positives)
-and the USAF Academy DFEC set (`usafa_dfec/` drone positives +
-`usafa_dfec_negatives/` box-fan/tow-plane hard-negatives). Both new drone
-buckets are subtype-excluded. These are internal/not-for-redistribution and
-their raw audio is gitignored.
+QST drone detections (`data/extra/drone/qst_detections/`, binary positives),
+QST dead-of-night windows (`data/extra/no_drone/qst_night_negatives/`, pulled
+by `pull_negative_audio.py` as no_drone negatives), and the USAF Academy DFEC
+set (`usafa_dfec/` drone positives + `usafa_dfec_negatives/` box-fan/tow-plane
+hard-negatives). The new drone buckets are subtype-excluded. These are
+internal/not-for-redistribution and their raw audio is gitignored.
 
 ---
 
@@ -165,9 +166,10 @@ git clone --depth 1 https://github.com/mackenzie-jane/drone-visualization.git
 cd ../..
 python embed_extra_audio.py    # writes data/extra/{drone,no_drone}/...
 
-# 2b. (optional) Embed long field recordings — QST sensor detections under
-#     detection-audio/ and the USAFA DFEC set — by slicing each into ~1 s
-#     windows. Adds binary positives (+ a few hard negatives).
+# 2b. (optional) Embed long field recordings by slicing each into ~1 s windows:
+#     QST detections (detection-audio/), QST night negatives
+#     (detection-audio-negatives/, via pull_negative_audio.py), and the USAFA
+#     DFEC set. Adds field positives + no_drone negatives.
 python embed_detection_sets.py
 
 # 3. Train both classifiers. Produces models/*.keras + *.tflite + metrics_*.json.
@@ -218,37 +220,41 @@ in their dataset documentation.
 
 ## Model performance
 
-Trained on 20,981 YAMNet embeddings (9,108 ERAU + 11,873 extra, the latter
-now including **field data**: QST sensor detections and the USAFA DFEC set,
-each long recording sliced into ~1 s windows). seed=1337. Both classifiers
-use the same dense head; only the output layer differs.
+Trained on 25,291 YAMNet embeddings (9,108 ERAU + 16,183 extra, the latter
+now including **field data** from the deployed sensors: QST drone detections
+(positives) and QST dead-of-night windows (no_drone negatives), plus the USAFA
+DFEC set — each long recording sliced into ~1 s windows). seed=1337. Both
+classifiers use the same dense head; only the output layer differs.
 
 **Binary split is clip-level** (`GroupShuffleSplit`): every ~1 s window from a
 single source recording is kept on the same side of the split, so a long clip
 sliced into many windows cannot leak across train/test. The subtype head uses
-a stratified split (it excludes the windowed field buckets, so it has no
+a stratified split (it excludes the windowed field-drone buckets, so it has no
 window leakage to correct).
 
 | Model | Accuracy | Precision | Recall | F1 | Test set |
 |-------|---------:|----------:|-------:|---:|---------:|
-| Binary (drone vs no_drone) | 91.3% | 89.1% | 97.2% | 93.0% | 4,172 |
-| Subtype (macro avg)        | 92.6% | 89.5% | 93.5% | 91.2% | 2,576 |
+| Binary (drone vs no_drone) | 92.6% | 92.1% | 93.8% | 92.9% | 4,598 |
+| Subtype (macro avg)        | 94.9% | 90.0% | 94.4% | 92.1% | 3,438 |
 
-> ⚠️ **Not comparable to the older ERAU+extra-only table.** Adding real field
-> recordings makes both the training set and the held-out test set harder and
-> more realistic. Relative to the prior clean eval, binary **recall rises**
-> (drone clips are caught more often) but **precision drops** (~0.96 → 0.89:
-> ~295 false positives on 1,688 test negatives) — the noisy field positives
-> make the detector fire more eagerly. Whether this is a net win for
-> deployment needs a fair shipped-vs-new A/B on one identical held-out set,
-> which is **not yet done**. The pre-field shipped weights remain on `main`.
-
-Binary per-source eval (`metrics_binary.json::per_source`), clip-level split:
-
-| Source | n_test | accuracy | precision | recall | F1 |
-|--------|-------:|---------:|----------:|-------:|---:|
-| erau   | 1,803  | 93.6%    | 90.0%     | 91.5%  | 90.7% |
-| extra  | 2,369  | 89.5%    | 88.8%     | 99.1%  | 93.7% |
+> ⚠️ **Not comparable to the older ERAU+extra-only table** — the test set is now
+> harder and more realistic (includes held-out field clips). What matters for
+> deployment is the same-split A/B in `eval_field_ab.py`, which isolates the
+> effect of the field data by training one head with it and one without on an
+> identical split:
+>
+> | Held-out slice | F1 without field data | F1 with field data |
+> |----------------|----------------------:|-------------------:|
+> | **field (QST/USAFA)** | **0.24** (recall 0.14) | **0.80** (recall 0.87) |
+> | extra_clean (ERAU-style negatives etc.) | 0.97 | 0.96 |
+> | erau | 0.92 | 0.89 |
+>
+> Takeaway: without field data the detector is **nearly blind to the 8 kHz
+> sensor domain** (catches 14% of field drone audio); with it, 87%. The QST
+> night **negatives** were added to rein in false alarms — they recovered the
+> clean-audio precision that field positives alone had eroded. Field-domain
+> precision is ~0.74 at threshold 0.5; raise the threshold for fewer false
+> alarms. The pre-field shipped weights remain on `main`.
 
 **Subtype labels** (in classifier index order):
 `bebop` (Parrot Bebop), `mambo` (Parrot Mambo), `matrice` (DJI Matrice
