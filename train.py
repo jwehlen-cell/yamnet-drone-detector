@@ -319,6 +319,13 @@ def train_binary(ds: dict) -> dict:
     model = build_dense_head(num_classes=1)
     model.summary(print_fn=print)
 
+    # Shuffle before fit: Keras `validation_split` carves the LAST 10% of rows
+    # WITHOUT shuffling, and load_dataset appends extra buckets at the tail, so
+    # an appended bucket would land entirely in the validation set and corrupt
+    # early stopping. Permute first so the val split is representative.
+    perm = np.random.RandomState(SEED).permutation(len(y_train))
+    X_train, y_train = X_train[perm], y_train[perm]
+
     ckpt = MODEL_DIR / "drone_classifier_binary.keras"
     callbacks = [
         tf.keras.callbacks.EarlyStopping(patience=8, restore_best_weights=True, monitor="val_loss"),

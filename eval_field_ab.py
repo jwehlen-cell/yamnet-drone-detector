@@ -25,7 +25,8 @@ from sklearn.model_selection import GroupShuffleSplit
 
 from train import SEED, build_dense_head, load_dataset
 
-FIELD_BUCKETS = {"qst_detections", "usafa_dfec", "usafa_dfec_negatives", "qst_night_negatives"}
+FIELD_BUCKETS = {"qst_detections", "usafa_dfec", "usafa_dfec_negatives",
+                 "qst_night_negatives", "qst_verified_negatives"}
 
 
 def _fit(X_tr, y_tr):

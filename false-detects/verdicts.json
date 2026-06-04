@@ -1,0 +1,1124 @@
+[
+  {
+    "detection_id": "678ff581ef904616a775ebaf786ef443",
+    "station": "SH006",
+    "utc": "2026-06-04 01:34:34Z",
+    "ae_peak_deployed": 0.567,
+    "ae_avg_deployed": 0.461,
+    "ae_rescore_window": 0.0759,
+    "kilo_max": 0.0155,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.806
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.179
+      },
+      {
+        "class": "Car",
+        "score": 0.161
+      },
+      {
+        "class": "Truck",
+        "score": 0.077
+      },
+      {
+        "class": "Outside, urban or manmade",
+        "score": 0.045
+      }
+    ]
+  },
+  {
+    "detection_id": "eec63dbd4d624478bb2e70920f700200",
+    "station": "SH016",
+    "utc": "2026-06-04 01:34:35Z",
+    "ae_peak_deployed": 0.859,
+    "ae_avg_deployed": 0.417,
+    "ae_rescore_window": 0.8769,
+    "kilo_max": 0.001,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Water",
+        "score": 0.263
+      },
+      {
+        "class": "Vehicle",
+        "score": 0.253
+      },
+      {
+        "class": "Boat, Water vehicle",
+        "score": 0.246
+      },
+      {
+        "class": "Waterfall",
+        "score": 0.176
+      },
+      {
+        "class": "Motorboat, speedboat",
+        "score": 0.137
+      }
+    ]
+  },
+  {
+    "detection_id": "5da246b323a64f5cbfb5c7a4418a3618",
+    "station": "SH010",
+    "utc": "2026-06-04 01:34:49Z",
+    "ae_peak_deployed": 0.65,
+    "ae_avg_deployed": 0.245,
+    "ae_rescore_window": 0.9341,
+    "kilo_max": 0.0002,
+    "kilo_n_clips": 2,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Animal",
+        "score": 0.26
+      },
+      {
+        "class": "Wild animals",
+        "score": 0.167
+      },
+      {
+        "class": "Outside, rural or natural",
+        "score": 0.15
+      },
+      {
+        "class": "Vehicle",
+        "score": 0.121
+      },
+      {
+        "class": "Bird",
+        "score": 0.096
+      }
+    ]
+  },
+  {
+    "detection_id": "8cc1d0fba88645218f3296efb310a3bf",
+    "station": "SH002",
+    "utc": "2026-06-04 01:35:08Z",
+    "ae_peak_deployed": 0.586,
+    "ae_avg_deployed": 0.286,
+    "ae_rescore_window": 0.9937,
+    "kilo_max": 0.0001,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.678
+      },
+      {
+        "class": "Motorboat, speedboat",
+        "score": 0.516
+      },
+      {
+        "class": "Boat, Water vehicle",
+        "score": 0.479
+      },
+      {
+        "class": "Wind noise (microphone)",
+        "score": 0.231
+      },
+      {
+        "class": "Wind",
+        "score": 0.192
+      }
+    ]
+  },
+  {
+    "detection_id": "1a6a3e68d656415fb24c684204a6c032",
+    "station": "SH006",
+    "utc": "2026-06-04 01:35:36Z",
+    "ae_peak_deployed": 0.788,
+    "ae_avg_deployed": 0.683,
+    "ae_rescore_window": 0.3767,
+    "kilo_max": 0.0155,
+    "kilo_n_clips": 2,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.298
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.098
+      },
+      {
+        "class": "Car",
+        "score": 0.077
+      },
+      {
+        "class": "Truck",
+        "score": 0.062
+      },
+      {
+        "class": "Outside, urban or manmade",
+        "score": 0.054
+      }
+    ]
+  },
+  {
+    "detection_id": "9fad757b669c4103b682d67a165b41ce",
+    "station": "SH010",
+    "utc": "2026-06-04 01:35:55Z",
+    "ae_peak_deployed": 0.618,
+    "ae_avg_deployed": 0.352,
+    "ae_rescore_window": 0.9821,
+    "kilo_max": 0.0002,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.237
+      },
+      {
+        "class": "Outside, rural or natural",
+        "score": 0.089
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.074
+      },
+      {
+        "class": "Car",
+        "score": 0.062
+      },
+      {
+        "class": "Animal",
+        "score": 0.059
+      }
+    ]
+  },
+  {
+    "detection_id": "6e64c91ab9704094bce222c246bf1da2",
+    "station": "SH016",
+    "utc": "2026-06-04 01:36:23Z",
+    "ae_peak_deployed": 0.593,
+    "ae_avg_deployed": 0.407,
+    "ae_rescore_window": 0.9762,
+    "kilo_max": 0.0006,
+    "kilo_n_clips": 2,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.356
+      },
+      {
+        "class": "Boat, Water vehicle",
+        "score": 0.185
+      },
+      {
+        "class": "Motorboat, speedboat",
+        "score": 0.154
+      },
+      {
+        "class": "Water",
+        "score": 0.077
+      },
+      {
+        "class": "Engine",
+        "score": 0.07
+      }
+    ]
+  },
+  {
+    "detection_id": "4c0a2d78cea248d9b5e410277d05852c",
+    "station": "SH006",
+    "utc": "2026-06-04 01:36:59Z",
+    "ae_peak_deployed": 0.69,
+    "ae_avg_deployed": 0.249,
+    "ae_rescore_window": 0.0978,
+    "kilo_max": 0.0,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.44
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.127
+      },
+      {
+        "class": "Car",
+        "score": 0.107
+      },
+      {
+        "class": "Outside, urban or manmade",
+        "score": 0.072
+      },
+      {
+        "class": "Truck",
+        "score": 0.054
+      }
+    ]
+  },
+  {
+    "detection_id": "10fc519dd6344249b8a5e7a6f742df68",
+    "station": "SH016",
+    "utc": "2026-06-04 01:37:26Z",
+    "ae_peak_deployed": 0.964,
+    "ae_avg_deployed": 0.667,
+    "ae_rescore_window": 0.9659,
+    "kilo_max": 0.0006,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.291
+      },
+      {
+        "class": "Boat, Water vehicle",
+        "score": 0.167
+      },
+      {
+        "class": "Water",
+        "score": 0.166
+      },
+      {
+        "class": "Waterfall",
+        "score": 0.119
+      },
+      {
+        "class": "Motorboat, speedboat",
+        "score": 0.109
+      }
+    ]
+  },
+  {
+    "detection_id": "2a1bd7c2c9d049e5a54f4a3eb210b449",
+    "station": "SH006",
+    "utc": "2026-06-04 01:38:02Z",
+    "ae_peak_deployed": 0.909,
+    "ae_avg_deployed": 0.854,
+    "ae_rescore_window": 0.6021,
+    "kilo_max": 0.0,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.525
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.198
+      },
+      {
+        "class": "Car",
+        "score": 0.192
+      },
+      {
+        "class": "Outside, urban or manmade",
+        "score": 0.091
+      },
+      {
+        "class": "Truck",
+        "score": 0.069
+      }
+    ]
+  },
+  {
+    "detection_id": "133d33e39db5437ea77c8c0c82cbc5fb",
+    "station": "SH010",
+    "utc": "2026-06-04 01:38:10Z",
+    "ae_peak_deployed": 0.503,
+    "ae_avg_deployed": 0.233,
+    "ae_rescore_window": 0.7386,
+    "kilo_max": 0.0001,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Aircraft",
+        "score": 0.17
+      },
+      {
+        "class": "Vehicle",
+        "score": 0.129
+      },
+      {
+        "class": "Outside, rural or natural",
+        "score": 0.112
+      },
+      {
+        "class": "White noise",
+        "score": 0.094
+      },
+      {
+        "class": "Fixed-wing aircraft, airplane",
+        "score": 0.093
+      }
+    ]
+  },
+  {
+    "detection_id": "bde217bc11ee43d2a1d6295854e55287",
+    "station": "SH016",
+    "utc": "2026-06-04 01:38:28Z",
+    "ae_peak_deployed": 0.794,
+    "ae_avg_deployed": 0.569,
+    "ae_rescore_window": 0.9636,
+    "kilo_max": 0.0007,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.292
+      },
+      {
+        "class": "Boat, Water vehicle",
+        "score": 0.233
+      },
+      {
+        "class": "Water",
+        "score": 0.189
+      },
+      {
+        "class": "Motorboat, speedboat",
+        "score": 0.157
+      },
+      {
+        "class": "Ocean",
+        "score": 0.123
+      }
+    ]
+  },
+  {
+    "detection_id": "d29c4ebdace24a5a9daa15b56137d098",
+    "station": "SH006",
+    "utc": "2026-06-04 01:39:03Z",
+    "ae_peak_deployed": 0.891,
+    "ae_avg_deployed": 0.811,
+    "ae_rescore_window": 0.1735,
+    "kilo_max": 0.0001,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.643
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.16
+      },
+      {
+        "class": "Car",
+        "score": 0.121
+      },
+      {
+        "class": "Truck",
+        "score": 0.077
+      },
+      {
+        "class": "Outside, urban or manmade",
+        "score": 0.073
+      }
+    ]
+  },
+  {
+    "detection_id": "7b05f97b930f40d6a3f184a9afcfe148",
+    "station": "SH010",
+    "utc": "2026-06-04 01:39:10Z",
+    "ae_peak_deployed": 0.599,
+    "ae_avg_deployed": 0.251,
+    "ae_rescore_window": 0.8478,
+    "kilo_max": 0.0002,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Animal",
+        "score": 0.127
+      },
+      {
+        "class": "Vehicle",
+        "score": 0.114
+      },
+      {
+        "class": "Outside, rural or natural",
+        "score": 0.099
+      },
+      {
+        "class": "Wild animals",
+        "score": 0.064
+      },
+      {
+        "class": "Bird",
+        "score": 0.054
+      }
+    ]
+  },
+  {
+    "detection_id": "5a726a8fab9e44a8a01ff20f2d1bb57e",
+    "station": "SH009",
+    "utc": "2026-06-04 01:39:24Z",
+    "ae_peak_deployed": 0.722,
+    "ae_avg_deployed": 0.329,
+    "ae_rescore_window": 0.2012,
+    "kilo_max": 0.0,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.687
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.106
+      },
+      {
+        "class": "Car",
+        "score": 0.074
+      },
+      {
+        "class": "Truck",
+        "score": 0.067
+      },
+      {
+        "class": "Outside, urban or manmade",
+        "score": 0.06
+      }
+    ]
+  },
+  {
+    "detection_id": "8138cebdbea1452aa0b1aec68feec523",
+    "station": "SH016",
+    "utc": "2026-06-04 01:39:29Z",
+    "ae_peak_deployed": 0.631,
+    "ae_avg_deployed": 0.31,
+    "ae_rescore_window": 0.4681,
+    "kilo_max": 0.0005,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Water",
+        "score": 0.462
+      },
+      {
+        "class": "Waterfall",
+        "score": 0.394
+      },
+      {
+        "class": "Rain",
+        "score": 0.303
+      },
+      {
+        "class": "Rain on surface",
+        "score": 0.283
+      },
+      {
+        "class": "Gurgling",
+        "score": 0.154
+      }
+    ]
+  },
+  {
+    "detection_id": "7f78752ab29043c8a715a137d6ec8c30",
+    "station": "SH006",
+    "utc": "2026-06-04 01:40:05Z",
+    "ae_peak_deployed": 0.99,
+    "ae_avg_deployed": 0.896,
+    "ae_rescore_window": 0.7674,
+    "kilo_max": 0.0,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.32
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.122
+      },
+      {
+        "class": "Car",
+        "score": 0.092
+      },
+      {
+        "class": "Music",
+        "score": 0.088
+      },
+      {
+        "class": "Outside, urban or manmade",
+        "score": 0.052
+      }
+    ]
+  },
+  {
+    "detection_id": "587366ef4cff4f44a023742f1ffff024",
+    "station": "SH002",
+    "utc": "2026-06-04 01:40:07Z",
+    "ae_peak_deployed": 0.705,
+    "ae_avg_deployed": 0.322,
+    "ae_rescore_window": 0.9698,
+    "kilo_max": 0.0001,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.415
+      },
+      {
+        "class": "Boat, Water vehicle",
+        "score": 0.199
+      },
+      {
+        "class": "Motorboat, speedboat",
+        "score": 0.191
+      },
+      {
+        "class": "Water",
+        "score": 0.078
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.059
+      }
+    ]
+  },
+  {
+    "detection_id": "d17a6c86a14c484b92058e9e661f736b",
+    "station": "SH013",
+    "utc": "2026-06-04 01:40:16Z",
+    "ae_peak_deployed": 0.56,
+    "ae_avg_deployed": 0.154,
+    "ae_rescore_window": 0.4875,
+    "kilo_max": 0.0004,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Water",
+        "score": 0.487
+      },
+      {
+        "class": "Waterfall",
+        "score": 0.398
+      },
+      {
+        "class": "Rain",
+        "score": 0.376
+      },
+      {
+        "class": "Rain on surface",
+        "score": 0.323
+      },
+      {
+        "class": "Gurgling",
+        "score": 0.175
+      }
+    ]
+  },
+  {
+    "detection_id": "9c5ec2d7b56f43b7a56bdc39a6b91910",
+    "station": "SH016",
+    "utc": "2026-06-04 01:40:30Z",
+    "ae_peak_deployed": 0.625,
+    "ae_avg_deployed": 0.377,
+    "ae_rescore_window": 0.9785,
+    "kilo_max": 0.0005,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.388
+      },
+      {
+        "class": "Boat, Water vehicle",
+        "score": 0.232
+      },
+      {
+        "class": "Motorboat, speedboat",
+        "score": 0.197
+      },
+      {
+        "class": "Water",
+        "score": 0.087
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.063
+      }
+    ]
+  },
+  {
+    "detection_id": "26d46d00b61f456ea846132fa0dd0d9d",
+    "station": "SH010",
+    "utc": "2026-06-04 01:41:06Z",
+    "ae_peak_deployed": 0.603,
+    "ae_avg_deployed": 0.427,
+    "ae_rescore_window": 0.976,
+    "kilo_max": 0.0,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.335
+      },
+      {
+        "class": "Outside, rural or natural",
+        "score": 0.09
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.09
+      },
+      {
+        "class": "Car",
+        "score": 0.06
+      },
+      {
+        "class": "Truck",
+        "score": 0.053
+      }
+    ]
+  },
+  {
+    "detection_id": "d5f4e28ecafd43488913028b6758f7e3",
+    "station": "SH006",
+    "utc": "2026-06-04 01:41:08Z",
+    "ae_peak_deployed": 0.818,
+    "ae_avg_deployed": 0.542,
+    "ae_rescore_window": 0.1248,
+    "kilo_max": 0.0,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.643
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.157
+      },
+      {
+        "class": "Car",
+        "score": 0.129
+      },
+      {
+        "class": "Truck",
+        "score": 0.085
+      },
+      {
+        "class": "Outside, urban or manmade",
+        "score": 0.082
+      }
+    ]
+  },
+  {
+    "detection_id": "f3c79d8af9464b5fb049a4d11af76676",
+    "station": "SH016",
+    "utc": "2026-06-04 01:41:31Z",
+    "ae_peak_deployed": 0.909,
+    "ae_avg_deployed": 0.66,
+    "ae_rescore_window": 0.9565,
+    "kilo_max": 0.0153,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.307
+      },
+      {
+        "class": "Boat, Water vehicle",
+        "score": 0.227
+      },
+      {
+        "class": "Water",
+        "score": 0.183
+      },
+      {
+        "class": "Motorboat, speedboat",
+        "score": 0.168
+      },
+      {
+        "class": "Waterfall",
+        "score": 0.1
+      }
+    ]
+  },
+  {
+    "detection_id": "697d39ae904843969e1283615bb01b4e",
+    "station": "SH016",
+    "utc": "2026-06-04 01:42:34Z",
+    "ae_peak_deployed": 0.851,
+    "ae_avg_deployed": 0.493,
+    "ae_rescore_window": 0.8762,
+    "kilo_max": 0.0019,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Water",
+        "score": 0.271
+      },
+      {
+        "class": "Vehicle",
+        "score": 0.245
+      },
+      {
+        "class": "Boat, Water vehicle",
+        "score": 0.213
+      },
+      {
+        "class": "Waterfall",
+        "score": 0.194
+      },
+      {
+        "class": "Motorboat, speedboat",
+        "score": 0.116
+      }
+    ]
+  },
+  {
+    "detection_id": "484c29fe6a044d5289712d70660901a6",
+    "station": "SH006",
+    "utc": "2026-06-04 01:42:34Z",
+    "ae_peak_deployed": 0.96,
+    "ae_avg_deployed": 0.815,
+    "ae_rescore_window": 0.3494,
+    "kilo_max": 0.1865,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.532
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.142
+      },
+      {
+        "class": "Car",
+        "score": 0.105
+      },
+      {
+        "class": "Truck",
+        "score": 0.058
+      },
+      {
+        "class": "Siren",
+        "score": 0.058
+      }
+    ]
+  },
+  {
+    "detection_id": "57681349110544d2b2f2bfb3aa1be23d",
+    "station": "SH013",
+    "utc": "2026-06-04 01:42:37Z",
+    "ae_peak_deployed": 0.953,
+    "ae_avg_deployed": 0.243,
+    "ae_rescore_window": 0.3797,
+    "kilo_max": 0.0074,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Water",
+        "score": 0.467
+      },
+      {
+        "class": "Waterfall",
+        "score": 0.395
+      },
+      {
+        "class": "Rain",
+        "score": 0.376
+      },
+      {
+        "class": "Rain on surface",
+        "score": 0.337
+      },
+      {
+        "class": "Gurgling",
+        "score": 0.175
+      }
+    ]
+  },
+  {
+    "detection_id": "6205e498a0ce455fb3d6e0c8a73ccc27",
+    "station": "SH010",
+    "utc": "2026-06-04 01:42:52Z",
+    "ae_peak_deployed": 0.536,
+    "ae_avg_deployed": 0.21,
+    "ae_rescore_window": 0.2265,
+    "kilo_max": 0.0002,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.438
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.124
+      },
+      {
+        "class": "Car",
+        "score": 0.118
+      },
+      {
+        "class": "Outside, urban or manmade",
+        "score": 0.08
+      },
+      {
+        "class": "Outside, rural or natural",
+        "score": 0.057
+      }
+    ]
+  },
+  {
+    "detection_id": "bc231b99514b4673afac17c18a02405e",
+    "station": "SH006",
+    "utc": "2026-06-04 01:43:37Z",
+    "ae_peak_deployed": 0.921,
+    "ae_avg_deployed": 0.723,
+    "ae_rescore_window": 0.4485,
+    "kilo_max": 0.0763,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.635
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.186
+      },
+      {
+        "class": "Car",
+        "score": 0.125
+      },
+      {
+        "class": "Truck",
+        "score": 0.113
+      },
+      {
+        "class": "Air brake",
+        "score": 0.065
+      }
+    ]
+  },
+  {
+    "detection_id": "b1ae361ae4b74e18ab67dc6b38d8ab41",
+    "station": "SH006",
+    "utc": "2026-06-04 01:44:38Z",
+    "ae_peak_deployed": 0.879,
+    "ae_avg_deployed": 0.777,
+    "ae_rescore_window": 0.8046,
+    "kilo_max": 0.0,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.404
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.113
+      },
+      {
+        "class": "Car",
+        "score": 0.086
+      },
+      {
+        "class": "Outside, urban or manmade",
+        "score": 0.055
+      },
+      {
+        "class": "Truck",
+        "score": 0.05
+      }
+    ]
+  },
+  {
+    "detection_id": "096828741bce4a31a0e5a258c7d84247",
+    "station": "SH016",
+    "utc": "2026-06-04 01:44:40Z",
+    "ae_peak_deployed": 0.568,
+    "ae_avg_deployed": 0.239,
+    "ae_rescore_window": 0.9706,
+    "kilo_max": 0.0003,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.41
+      },
+      {
+        "class": "Boat, Water vehicle",
+        "score": 0.163
+      },
+      {
+        "class": "Motorboat, speedboat",
+        "score": 0.16
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.068
+      },
+      {
+        "class": "Engine",
+        "score": 0.054
+      }
+    ]
+  },
+  {
+    "detection_id": "a0c3ef2422324012a29aa72e4ba86553",
+    "station": "SH016",
+    "utc": "2026-06-04 01:45:40Z",
+    "ae_peak_deployed": 0.588,
+    "ae_avg_deployed": 0.468,
+    "ae_rescore_window": 0.5029,
+    "kilo_max": 0.0022,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Water",
+        "score": 0.47
+      },
+      {
+        "class": "Waterfall",
+        "score": 0.458
+      },
+      {
+        "class": "Stream",
+        "score": 0.186
+      },
+      {
+        "class": "Gurgling",
+        "score": 0.168
+      },
+      {
+        "class": "Ocean",
+        "score": 0.162
+      }
+    ]
+  },
+  {
+    "detection_id": "365f6f2d9f4646e19c018362a56de8fe",
+    "station": "SH006",
+    "utc": "2026-06-04 01:45:42Z",
+    "ae_peak_deployed": 0.876,
+    "ae_avg_deployed": 0.809,
+    "ae_rescore_window": 0.4692,
+    "kilo_max": 0.0,
+    "kilo_n_clips": 2,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Vehicle",
+        "score": 0.293
+      },
+      {
+        "class": "Motor vehicle (road)",
+        "score": 0.12
+      },
+      {
+        "class": "Car",
+        "score": 0.117
+      },
+      {
+        "class": "Outside, urban or manmade",
+        "score": 0.088
+      },
+      {
+        "class": "Outside, rural or natural",
+        "score": 0.069
+      }
+    ]
+  },
+  {
+    "detection_id": "5d3f455029ae499dbc2a3b0f8340a1e7",
+    "station": "SH013",
+    "utc": "2026-06-04 01:46:28Z",
+    "ae_peak_deployed": 0.513,
+    "ae_avg_deployed": 0.179,
+    "ae_rescore_window": 0.6099,
+    "kilo_max": 0.0,
+    "kilo_n_clips": 3,
+    "kilo_fires": false,
+    "verified_negative": true,
+    "why_top_classes": [
+      {
+        "class": "Water",
+        "score": 0.449
+      },
+      {
+        "class": "Waterfall",
+        "score": 0.37
+      },
+      {
+        "class": "Rain",
+        "score": 0.36
+      },
+      {
+        "class": "Rain on surface",
+        "score": 0.315
+      },
+      {
+        "class": "Gurgling",
+        "score": 0.179
+      }
+    ]
+  }
+]

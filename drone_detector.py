@@ -43,7 +43,7 @@ class DroneDetector:
     def __init__(
         self,
         model_path: str | os.PathLike,
-        threshold: float = 0.7,
+        threshold: float = 0.45,
         labels_path: Optional[str | os.PathLike] = None,
         yamnet_url: str = YAMNET_TFHUB_URL,
     ) -> None:

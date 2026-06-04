@@ -14,6 +14,7 @@ train.py because they have no usable model-level subtype / too few clips):
 
   detection-audio/**/*.wav                 -> data/extra/drone/qst_detections/
   detection-audio-negatives/**/*.wav       -> data/extra/no_drone/qst_night_negatives/
+  detection-audio-falsepos/**/*.wav        -> data/extra/no_drone/qst_verified_negatives/
   usafa-dfec-dataset-16k/{450,teal2,hunter}* -> data/extra/drone/usafa_dfec/
   usafa-dfec-dataset-16k/{box_fan,tow_planes}* -> data/extra/no_drone/usafa_dfec_negatives/
 """
@@ -130,6 +131,7 @@ def main() -> int:
 
     qst_dir = ROOT / "detection-audio"
     qst_neg_dir = ROOT / "detection-audio-negatives"
+    qst_fp_dir = ROOT / "detection-audio-falsepos"
     usafa_dir = ROOT / "usafa-dfec-dataset-16k"
     if not qst_dir.is_dir() or not usafa_dir.is_dir():
         print(f"Missing input dirs: {qst_dir} and/or {usafa_dir}")
@@ -137,6 +139,7 @@ def main() -> int:
 
     qst_wavs = sorted(qst_dir.rglob("*.wav"))
     qst_neg_wavs = sorted(qst_neg_dir.rglob("*.wav")) if qst_neg_dir.is_dir() else []
+    qst_fp_wavs = sorted(qst_fp_dir.rglob("*.wav")) if qst_fp_dir.is_dir() else []
     usafa_wavs = sorted(usafa_dir.glob("*.wav"))
     usafa_drone = [w for w in usafa_wavs if _usafa_is_drone(w.name)]
     usafa_neg = [w for w in usafa_wavs if not _usafa_is_drone(w.name)]
@@ -160,6 +163,13 @@ def main() -> int:
     # positive-heavy field set + gives held-out field negatives for eval).
     summary["qst_night_negatives"] = _process(
         embedder, qst_neg_wavs, OUT_ROOT / "no_drone" / "qst_night_negatives",
+        lambda w: f"{w.parent.name}_{w.stem}", args.force,
+    )
+    # Kilo-verified false positives from the live Shaw deployment -> no_drone
+    # hard negatives (daytime vehicle/water/wind confounders the night
+    # negatives never covered). Pulled by pull_falsepos_audio.py.
+    summary["qst_verified_negatives"] = _process(
+        embedder, qst_fp_wavs, OUT_ROOT / "no_drone" / "qst_verified_negatives",
         lambda w: f"{w.parent.name}_{w.stem}", args.force,
     )
 

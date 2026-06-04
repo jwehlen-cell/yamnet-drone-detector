@@ -1,0 +1,431 @@
+[
+  {
+    "detection_id": "678ff581ef904616a775ebaf786ef443",
+    "device_id": "ARGOS-SHAW-SH006",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH006 (4s/pcm16)",
+    "average_score": 0.46135924756526947,
+    "peak_score": 0.5670679807662964,
+    "last_frame_timestamp_ms": 1780536874837,
+    "published_at_ms": 1780536875420,
+    "location": {
+      "lat": 33.96306077136266,
+      "lon": -80.46605912164473
+    }
+  },
+  {
+    "detection_id": "eec63dbd4d624478bb2e70920f700200",
+    "device_id": "ARGOS-SHAW-SH016",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH016 (4s/pcm16)",
+    "average_score": 0.41695522516965866,
+    "peak_score": 0.8585883975028992,
+    "last_frame_timestamp_ms": 1780536875976,
+    "published_at_ms": 1780536876419,
+    "location": {
+      "lat": 33.970827,
+      "lon": -80.4435967
+    }
+  },
+  {
+    "detection_id": "5da246b323a64f5cbfb5c7a4418a3618",
+    "device_id": "ARGOS-SHAW-SH010",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH010 (4s/pcm16)",
+    "average_score": 0.24500716477632523,
+    "peak_score": 0.6503267288208008,
+    "last_frame_timestamp_ms": 1780536889406,
+    "published_at_ms": 1780536889770,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "8cc1d0fba88645218f3296efb310a3bf",
+    "device_id": "ARGOS-SHAW-SH002",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH002 (4s/pcm16)",
+    "average_score": 0.28609347268939017,
+    "peak_score": 0.5857251882553101,
+    "last_frame_timestamp_ms": 1780536908520,
+    "published_at_ms": 1780536908983,
+    "location": {
+      "lat": 33.9891231898636,
+      "lon": -80.45402125147773
+    }
+  },
+  {
+    "detection_id": "1a6a3e68d656415fb24c684204a6c032",
+    "device_id": "ARGOS-SHAW-SH006",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH006 (4s/pcm16)",
+    "average_score": 0.6833195447921753,
+    "peak_score": 0.7884119749069214,
+    "last_frame_timestamp_ms": 1780536936706,
+    "published_at_ms": 1780536937074,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "9fad757b669c4103b682d67a165b41ce",
+    "device_id": "ARGOS-SHAW-SH010",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH010 (4s/pcm16)",
+    "average_score": 0.35207915008068086,
+    "peak_score": 0.6178618669509888,
+    "last_frame_timestamp_ms": 1780536955201,
+    "published_at_ms": 1780536955614,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "6e64c91ab9704094bce222c246bf1da2",
+    "device_id": "ARGOS-SHAW-SH016",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH016 (4s/pcm16)",
+    "average_score": 0.40704184770584106,
+    "peak_score": 0.5931934714317322,
+    "last_frame_timestamp_ms": 1780536983672,
+    "published_at_ms": 1780536984033,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "4c0a2d78cea248d9b5e410277d05852c",
+    "device_id": "ARGOS-SHAW-SH006",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH006 (4s/pcm16)",
+    "average_score": 0.24896711707115174,
+    "peak_score": 0.6902772784233093,
+    "last_frame_timestamp_ms": 1780537019463,
+    "published_at_ms": 1780537019856,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "10fc519dd6344249b8a5e7a6f742df68",
+    "device_id": "ARGOS-SHAW-SH016",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH016 (4s/pcm16)",
+    "average_score": 0.6671290397644043,
+    "peak_score": 0.9644799828529358,
+    "last_frame_timestamp_ms": 1780537046426,
+    "published_at_ms": 1780537046791,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "2a1bd7c2c9d049e5a54f4a3eb210b449",
+    "device_id": "ARGOS-SHAW-SH006",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH006 (4s/pcm16)",
+    "average_score": 0.8537536144256592,
+    "peak_score": 0.9093087315559387,
+    "last_frame_timestamp_ms": 1780537082234,
+    "published_at_ms": 1780537082691,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "133d33e39db5437ea77c8c0c82cbc5fb",
+    "device_id": "ARGOS-SHAW-SH010",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH010 (4s/pcm16)",
+    "average_score": 0.2326292648911476,
+    "peak_score": 0.503311812877655,
+    "last_frame_timestamp_ms": 1780537090304,
+    "published_at_ms": 1780537090699,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "bde217bc11ee43d2a1d6295854e55287",
+    "device_id": "ARGOS-SHAW-SH016",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH016 (4s/pcm16)",
+    "average_score": 0.5689994394779205,
+    "peak_score": 0.7940160632133484,
+    "last_frame_timestamp_ms": 1780537108004,
+    "published_at_ms": 1780537108413,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "d29c4ebdace24a5a9daa15b56137d098",
+    "device_id": "ARGOS-SHAW-SH006",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH006 (4s/pcm16)",
+    "average_score": 0.811361563205719,
+    "peak_score": 0.8913635611534119,
+    "last_frame_timestamp_ms": 1780537143269,
+    "published_at_ms": 1780537143644,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "7b05f97b930f40d6a3f184a9afcfe148",
+    "device_id": "ARGOS-SHAW-SH010",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH010 (4s/pcm16)",
+    "average_score": 0.2511440567672253,
+    "peak_score": 0.5992329120635986,
+    "last_frame_timestamp_ms": 1780537150921,
+    "published_at_ms": 1780537151280,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "5a726a8fab9e44a8a01ff20f2d1bb57e",
+    "device_id": "ARGOS-SHAW-SH009",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH009 (4s/pcm16)",
+    "average_score": 0.32869197726249694,
+    "peak_score": 0.7215205430984497,
+    "last_frame_timestamp_ms": 1780537164630,
+    "published_at_ms": 1780537165016,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "8138cebdbea1452aa0b1aec68feec523",
+    "device_id": "ARGOS-SHAW-SH016",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH016 (4s/pcm16)",
+    "average_score": 0.3099400371313095,
+    "peak_score": 0.6310036182403564,
+    "last_frame_timestamp_ms": 1780537169434,
+    "published_at_ms": 1780537169811,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "7f78752ab29043c8a715a137d6ec8c30",
+    "device_id": "ARGOS-SHAW-SH006",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH006 (4s/pcm16)",
+    "average_score": 0.8959833979606628,
+    "peak_score": 0.9901005029678345,
+    "last_frame_timestamp_ms": 1780537205192,
+    "published_at_ms": 1780537205560,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "587366ef4cff4f44a023742f1ffff024",
+    "device_id": "ARGOS-SHAW-SH002",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH002 (4s/pcm16)",
+    "average_score": 0.3222886860370636,
+    "peak_score": 0.7054089307785034,
+    "last_frame_timestamp_ms": 1780537207828,
+    "published_at_ms": 1780537208227,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "d17a6c86a14c484b92058e9e661f736b",
+    "device_id": "ARGOS-SHAW-SH013",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH013 (4s/pcm16)",
+    "average_score": 0.15437681302428247,
+    "peak_score": 0.5599344968795776,
+    "last_frame_timestamp_ms": 1780537216285,
+    "published_at_ms": 1780537216645,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "9c5ec2d7b56f43b7a56bdc39a6b91910",
+    "device_id": "ARGOS-SHAW-SH016",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH016 (4s/pcm16)",
+    "average_score": 0.3765091598033905,
+    "peak_score": 0.6250428557395935,
+    "last_frame_timestamp_ms": 1780537230178,
+    "published_at_ms": 1780537230536,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "26d46d00b61f456ea846132fa0dd0d9d",
+    "device_id": "ARGOS-SHAW-SH010",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH010 (4s/pcm16)",
+    "average_score": 0.426804655790329,
+    "peak_score": 0.603413999080658,
+    "last_frame_timestamp_ms": 1780537266287,
+    "published_at_ms": 1780537266668,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "d5f4e28ecafd43488913028b6758f7e3",
+    "device_id": "ARGOS-SHAW-SH006",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH006 (4s/pcm16)",
+    "average_score": 0.5415069043636322,
+    "peak_score": 0.818122386932373,
+    "last_frame_timestamp_ms": 1780537268854,
+    "published_at_ms": 1780537269301,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "f3c79d8af9464b5fb049a4d11af76676",
+    "device_id": "ARGOS-SHAW-SH016",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH016 (4s/pcm16)",
+    "average_score": 0.6604350507259369,
+    "peak_score": 0.909165620803833,
+    "last_frame_timestamp_ms": 1780537291849,
+    "published_at_ms": 1780537292240,
+    "location": {
+      "lat": 0.0,
+      "lon": 0.0
+    }
+  },
+  {
+    "detection_id": "697d39ae904843969e1283615bb01b4e",
+    "device_id": "ARGOS-SHAW-SH016",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH016 (4s/pcm16)",
+    "average_score": 0.4934139084070921,
+    "peak_score": 0.8510076999664307,
+    "last_frame_timestamp_ms": 1780537354755,
+    "published_at_ms": 1780537355232,
+    "location": {
+      "lat": 33.9708266,
+      "lon": -80.4435953
+    }
+  },
+  {
+    "detection_id": "484c29fe6a044d5289712d70660901a6",
+    "device_id": "ARGOS-SHAW-SH006",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH006 (4s/pcm16)",
+    "average_score": 0.8150888562202454,
+    "peak_score": 0.9600182771682739,
+    "last_frame_timestamp_ms": 1780537354771,
+    "published_at_ms": 1780537355460,
+    "location": {
+      "lat": 33.963057722312904,
+      "lon": -80.46606414484538
+    }
+  },
+  {
+    "detection_id": "57681349110544d2b2f2bfb3aa1be23d",
+    "device_id": "ARGOS-SHAW-SH013",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH013 (4s/pcm16)",
+    "average_score": 0.2428221467882395,
+    "peak_score": 0.9526917934417725,
+    "last_frame_timestamp_ms": 1780537357932,
+    "published_at_ms": 1780537358411,
+    "location": {
+      "lat": 33.96527173547014,
+      "lon": -80.44948858305521
+    }
+  },
+  {
+    "detection_id": "6205e498a0ce455fb3d6e0c8a73ccc27",
+    "device_id": "ARGOS-SHAW-SH010",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH010 (4s/pcm16)",
+    "average_score": 0.20988674610853195,
+    "peak_score": 0.5359353423118591,
+    "last_frame_timestamp_ms": 1780537372394,
+    "published_at_ms": 1780537372855,
+    "location": {
+      "lat": 33.987692,
+      "lon": -80.459884
+    }
+  },
+  {
+    "detection_id": "bc231b99514b4673afac17c18a02405e",
+    "device_id": "ARGOS-SHAW-SH006",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH006 (4s/pcm16)",
+    "average_score": 0.7225151062011719,
+    "peak_score": 0.9212261438369751,
+    "last_frame_timestamp_ms": 1780537417442,
+    "published_at_ms": 1780537417859,
+    "location": {
+      "lat": 33.963007,
+      "lon": -80.466037
+    }
+  },
+  {
+    "detection_id": "b1ae361ae4b74e18ab67dc6b38d8ab41",
+    "device_id": "ARGOS-SHAW-SH006",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH006 (4s/pcm16)",
+    "average_score": 0.7773428201675415,
+    "peak_score": 0.8791865706443787,
+    "last_frame_timestamp_ms": 1780537478940,
+    "published_at_ms": 1780537479312,
+    "location": {
+      "lat": 33.963007,
+      "lon": -80.466037
+    }
+  },
+  {
+    "detection_id": "096828741bce4a31a0e5a258c7d84247",
+    "device_id": "ARGOS-SHAW-SH016",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH016 (4s/pcm16)",
+    "average_score": 0.23900673687458038,
+    "peak_score": 0.5677614808082581,
+    "last_frame_timestamp_ms": 1780537480050,
+    "published_at_ms": 1780537480428,
+    "location": {
+      "lat": 33.971952,
+      "lon": -80.442491
+    }
+  },
+  {
+    "detection_id": "a0c3ef2422324012a29aa72e4ba86553",
+    "device_id": "ARGOS-SHAW-SH016",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH016 (4s/pcm16)",
+    "average_score": 0.468203192949295,
+    "peak_score": 0.5884905457496643,
+    "last_frame_timestamp_ms": 1780537540944,
+    "published_at_ms": 1780537541313,
+    "location": {
+      "lat": 33.971952,
+      "lon": -80.442491
+    }
+  },
+  {
+    "detection_id": "365f6f2d9f4646e19c018362a56de8fe",
+    "device_id": "ARGOS-SHAW-SH006",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH006 (4s/pcm16)",
+    "average_score": 0.809324073791504,
+    "peak_score": 0.8763657212257385,
+    "last_frame_timestamp_ms": 1780537542273,
+    "published_at_ms": 1780537542677,
+    "location": {
+      "lat": 33.963007,
+      "lon": -80.466037
+    }
+  },
+  {
+    "detection_id": "5d3f455029ae499dbc2a3b0f8340a1e7",
+    "device_id": "ARGOS-SHAW-SH013",
+    "site_label": "ARGOS live pull – Shaw cluster, ARGOS-SHAW-SH013 (4s/pcm16)",
+    "average_score": 0.17921481421217322,
+    "peak_score": 0.512580156326294,
+    "last_frame_timestamp_ms": 1780537588833,
+    "published_at_ms": 1780537589196,
+    "location": {
+      "lat": 33.965186,
+      "lon": -80.449219
+    }
+  }
+]

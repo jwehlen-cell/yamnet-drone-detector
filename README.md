@@ -220,6 +220,21 @@ in their dataset documentation.
 
 ## Model performance
 
+> **Hard-negative update (2026-06-04).** The shipped binary head now also
+> trains on **5,000 Kilo-verified false-positive hard negatives** harvested from
+> 8 h of live Shaw sensor audio — clips where Angels Envy fired (peak ≥0.7) but
+> the independent Kilo Lani detector cleared the same native audio (<0.35).
+> 47% of the live stream was such false positives (vehicle / water / wind
+> broadband confounders the dead-of-night negatives never covered). Effect on a
+> held-out set of unseen confounder clips: false-positive rate **0.305 → 0.011**
+> @0.7, generalizing to a fully held-out sensor, with clean-domain negatives
+> unharmed. The default threshold dropped **0.7 → 0.45** (the new model dominates
+> the precision/recall frontier — see `threshold_sweep.py`). Pipeline:
+> `harvest_falsepos_8h.py` → `embed_detection_sets.py` → `retrain_with_harvest.py`
+> (A/B) / `train.py` (ship). Overall test metrics: acc 0.950, P 0.936, R 0.941,
+> F1 0.938 on 5,961 held-out windows. A `validation_split` footgun in the fit
+> harnesses was fixed (shuffle before Keras carves the last 10% as validation).
+
 Trained on 25,291 YAMNet embeddings (9,108 ERAU + 16,183 extra, the latter
 now including **field data** from the deployed sensors: QST drone detections
 (positives) and QST dead-of-night windows (no_drone negatives), plus the USAFA

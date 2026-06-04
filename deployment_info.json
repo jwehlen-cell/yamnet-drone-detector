@@ -8,14 +8,14 @@
       "metrics": "models/metrics_binary.json",
       "labels": ["no_drone", "drone"],
       "output_kind": "sigmoid",
-      "default_threshold": 0.7,
+      "default_threshold": 0.45,
       "eval_split": "clip-level GroupShuffleSplit (all ~1s windows of a source clip kept on one side; no window-level leakage)",
-      "test_accuracy": 0.9262722923010004,
-      "test_precision": 0.9208126036484245,
-      "test_recall": 0.937526382439848,
-      "test_f1": 0.9290943317297636,
-      "test_set_size": 4598,
-      "note": "Trained on ERAU+extra plus field data: QST sensor detections (positives), QST dead-of-night windows (no_drone negatives), and USAFA DFEC. Numbers are on a harder, more realistic test distribution than the prior ERAU+extra-only eval and are NOT directly comparable to it. A fair same-split A/B (eval_field_ab.py) shows adding field data is decisive on the deployment domain: held-out FIELD F1 0.24 (no field data) -> 0.80 (with), recall 0.14 -> 0.87. Adding the night negatives recovered clean-audio precision (extra_clean F1 regression 0.96->0.90 without negatives shrank to 0.97->0.96 with). Field-domain precision is ~0.74 at threshold 0.5; raise the threshold to trade recall for fewer false alarms."
+      "test_accuracy": 0.9501761449421238,
+      "test_precision": 0.9355371900826446,
+      "test_recall": 0.9413721413721414,
+      "test_f1": 0.9384455958549223,
+      "test_set_size": 5961,
+      "note": "Trained on ERAU+extra plus field data (QST detections, QST night negatives, USAFA DFEC) AND 5,000 Kilo-verified false-positive HARD NEGATIVES harvested from 8h of live Shaw audio (2026-06-04): clips where Angels Envy fired (peak>=0.7) but the independent Kilo Lani detector cleared on native audio (<0.35). 47% of the live Shaw stream was such false positives (vehicle/water/wind broadband confounders the night-negatives never covered). Adding them cut the held-out false-positive rate on unseen confounder clips from 0.305 -> 0.011 @0.7 (eval_falsepos_ab.py / retrain_with_harvest.py), generalized to a fully held-out sensor (SH006 FP 0.102 -> 0.043), and did NOT harm clean-domain negatives (0.048 -> 0.024). default_threshold lowered 0.7 -> 0.45: the hard-negative model dominates the precision/recall frontier, so at ~0.45 it keeps field-drone recall ~0.73-0.78 while holding verified-neg FP ~0.025-0.035 (threshold_sweep.py). NOTE: this 0.45 applies to DroneDetector.detect (mean-pooled clip score); the live phone/bridge worker fires on peak_score (per-frame max) and its threshold should be re-tuned on peak semantics. Also fixed a validation_split footgun in train.py/eval_field_ab.py (Keras took the unshuffled last 10% as validation; appended buckets landed entirely in val and corrupted early stopping)."
     },
     "subtype": {
       "keras": "models/drone_classifier_subtype.keras",
