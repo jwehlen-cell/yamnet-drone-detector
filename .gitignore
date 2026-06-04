@@ -15,6 +15,10 @@ data/*
 # The embedding/pull scripts ARE tracked; the raw audio + metadata are not.
 detection-audio/
 detection-audio-negatives/
+detection-audio-falsepos/
+detection-audio-falsepos-holdout/
+detection-audio-confounders/
+both-fire-review/
 detection-metadata/
 usafa-dfec-dataset/
 usafa-dfec-dataset-16k/

@@ -1,0 +1,31 @@
+[
+  {
+    "event": "04:11 multi-sensor pass",
+    "human_label": "train",
+    "is_drone": false,
+    "basis": "operator ear (high confidence) + AST AudioSet (Train / Railroad car / Rail transport in top-8); overrides the 3-detector (AE+Kilo+GANON) drone vote",
+    "clips": [
+      {
+        "sensor": "SH009",
+        "ts": "2026-06-04T04:11:34Z"
+      },
+      {
+        "sensor": "SH002",
+        "ts": "2026-06-04T04:11:36Z"
+      },
+      {
+        "sensor": "SH002",
+        "ts": "2026-06-04T04:11:40Z"
+      },
+      {
+        "sensor": "SH009",
+        "ts": "2026-06-04T04:11:42Z"
+      },
+      {
+        "sensor": "SH010",
+        "ts": "2026-06-04T04:11:44Z"
+      }
+    ],
+    "action": "embedded as no_drone/train_negatives hard negatives; not yet retrained"
+  }
+]
