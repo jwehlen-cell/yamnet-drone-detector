@@ -1,0 +1,945 @@
+[
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:20:12Z",
+    "old_peak": 0.825,
+    "old_avg": 0.735,
+    "ae_new": 0.648,
+    "kilo": 0.783,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.322
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.214
+      },
+      {
+        "cls": "Insect",
+        "p": 0.074
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:21:25Z",
+    "old_peak": 0.886,
+    "old_avg": 0.867,
+    "ae_new": 0.682,
+    "kilo": 0.077,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.349
+      },
+      {
+        "cls": "Music",
+        "p": 0.132
+      },
+      {
+        "cls": "Insect",
+        "p": 0.08
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:23:24Z",
+    "old_peak": 0.859,
+    "old_avg": 0.589,
+    "ae_new": 0.768,
+    "kilo": 0.039,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.35
+      },
+      {
+        "cls": "Music",
+        "p": 0.214
+      },
+      {
+        "cls": "Silence",
+        "p": 0.072
+      }
+    ]
+  },
+  {
+    "sensor": "SH009",
+    "ts": "2026-06-05T01:24:09Z",
+    "old_peak": 0.71,
+    "old_avg": 0.21,
+    "ae_new": 0.772,
+    "kilo": 0.0,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Silence",
+        "p": 0.416
+      },
+      {
+        "cls": "Music",
+        "p": 0.04
+      },
+      {
+        "cls": "White noise",
+        "p": 0.021
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:24:25Z",
+    "old_peak": 0.81,
+    "old_avg": 0.768,
+    "ae_new": 0.732,
+    "kilo": 0.532,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.199
+      },
+      {
+        "cls": "Music",
+        "p": 0.103
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.081
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:25:27Z",
+    "old_peak": 0.824,
+    "old_avg": 0.786,
+    "ae_new": 0.722,
+    "kilo": 0.949,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.537
+      },
+      {
+        "cls": "Croak",
+        "p": 0.114
+      },
+      {
+        "cls": "Insect",
+        "p": 0.067
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:26:28Z",
+    "old_peak": 0.827,
+    "old_avg": 0.809,
+    "ae_new": 0.752,
+    "kilo": 0.76,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Music",
+        "p": 0.519
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.096
+      },
+      {
+        "cls": "Silence",
+        "p": 0.095
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:27:30Z",
+    "old_peak": 0.845,
+    "old_avg": 0.825,
+    "ae_new": 0.771,
+    "kilo": 0.864,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Music",
+        "p": 0.684
+      },
+      {
+        "cls": "Silence",
+        "p": 0.101
+      },
+      {
+        "cls": "Musical instrument",
+        "p": 0.063
+      }
+    ]
+  },
+  {
+    "sensor": "SH009",
+    "ts": "2026-06-05T01:27:57Z",
+    "old_peak": 0.759,
+    "old_avg": 0.615,
+    "ae_new": 0.833,
+    "kilo": 0.015,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Silence",
+        "p": 0.363
+      },
+      {
+        "cls": "Music",
+        "p": 0.112
+      },
+      {
+        "cls": "Musical instrument",
+        "p": 0.02
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:28:31Z",
+    "old_peak": 0.83,
+    "old_avg": 0.777,
+    "ae_new": 0.763,
+    "kilo": 0.85,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.376
+      },
+      {
+        "cls": "Music",
+        "p": 0.207
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.11
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:29:33Z",
+    "old_peak": 0.866,
+    "old_avg": 0.82,
+    "ae_new": 0.878,
+    "kilo": 0.745,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Insect",
+        "p": 0.235
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.103
+      },
+      {
+        "cls": "Music",
+        "p": 0.103
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:30:35Z",
+    "old_peak": 0.825,
+    "old_avg": 0.799,
+    "ae_new": 0.788,
+    "kilo": 0.89,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.399
+      },
+      {
+        "cls": "Insect",
+        "p": 0.187
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.112
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:31:36Z",
+    "old_peak": 0.789,
+    "old_avg": 0.516,
+    "ae_new": 0.159,
+    "kilo": 0.007,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Insect",
+        "p": 0.25
+      },
+      {
+        "cls": "Frog",
+        "p": 0.158
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.101
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:32:37Z",
+    "old_peak": 0.721,
+    "old_avg": 0.268,
+    "ae_new": 0.49,
+    "kilo": 0.0,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Insect",
+        "p": 0.112
+      },
+      {
+        "cls": "Frog",
+        "p": 0.094
+      },
+      {
+        "cls": "Music",
+        "p": 0.087
+      }
+    ]
+  },
+  {
+    "sensor": "SH002",
+    "ts": "2026-06-05T01:33:21Z",
+    "old_peak": 0.943,
+    "old_avg": 0.364,
+    "ae_new": 0.112,
+    "kilo": 0.0,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Music",
+        "p": 0.597
+      },
+      {
+        "cls": "Caw",
+        "p": 0.186
+      },
+      {
+        "cls": "Crow",
+        "p": 0.137
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:33:39Z",
+    "old_peak": 0.724,
+    "old_avg": 0.581,
+    "ae_new": 0.328,
+    "kilo": 0.199,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Buzz",
+        "p": 0.243
+      },
+      {
+        "cls": "Frog",
+        "p": 0.134
+      },
+      {
+        "cls": "Insect",
+        "p": 0.129
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:34:41Z",
+    "old_peak": 0.728,
+    "old_avg": 0.413,
+    "ae_new": 0.658,
+    "kilo": 0.984,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.268
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.206
+      },
+      {
+        "cls": "Insect",
+        "p": 0.06
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:36:26Z",
+    "old_peak": 0.756,
+    "old_avg": 0.509,
+    "ae_new": 0.637,
+    "kilo": 0.152,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.4
+      },
+      {
+        "cls": "Insect",
+        "p": 0.303
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.161
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:37:57Z",
+    "old_peak": 0.726,
+    "old_avg": 0.19,
+    "ae_new": 0.507,
+    "kilo": 0.012,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Insect",
+        "p": 0.416
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.212
+      },
+      {
+        "cls": "Frog",
+        "p": 0.171
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:38:58Z",
+    "old_peak": 0.817,
+    "old_avg": 0.685,
+    "ae_new": 0.59,
+    "kilo": 0.739,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.265
+      },
+      {
+        "cls": "Insect",
+        "p": 0.254
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.154
+      }
+    ]
+  },
+  {
+    "sensor": "SH016",
+    "ts": "2026-06-05T01:39:56Z",
+    "old_peak": 0.983,
+    "old_avg": 0.277,
+    "ae_new": 0.015,
+    "kilo": 0.0,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "White noise",
+        "p": 0.168
+      },
+      {
+        "cls": "Vehicle",
+        "p": 0.065
+      },
+      {
+        "cls": "Rustling leaves",
+        "p": 0.054
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:39:59Z",
+    "old_peak": 0.85,
+    "old_avg": 0.784,
+    "ae_new": 0.775,
+    "kilo": 0.371,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.269
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.167
+      },
+      {
+        "cls": "Music",
+        "p": 0.141
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:41:01Z",
+    "old_peak": 0.832,
+    "old_avg": 0.821,
+    "ae_new": 0.844,
+    "kilo": 0.312,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.159
+      },
+      {
+        "cls": "Music",
+        "p": 0.145
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.139
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:42:02Z",
+    "old_peak": 0.882,
+    "old_avg": 0.848,
+    "ae_new": 0.794,
+    "kilo": 0.237,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.423
+      },
+      {
+        "cls": "Insect",
+        "p": 0.271
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.075
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:43:04Z",
+    "old_peak": 0.853,
+    "old_avg": 0.799,
+    "ae_new": 0.468,
+    "kilo": 0.267,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.435
+      },
+      {
+        "cls": "Insect",
+        "p": 0.249
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.118
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:44:05Z",
+    "old_peak": 0.857,
+    "old_avg": 0.786,
+    "ae_new": 0.685,
+    "kilo": 0.065,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.421
+      },
+      {
+        "cls": "Insect",
+        "p": 0.229
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.107
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:45:07Z",
+    "old_peak": 0.857,
+    "old_avg": 0.821,
+    "ae_new": 0.863,
+    "kilo": 0.383,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.549
+      },
+      {
+        "cls": "Insect",
+        "p": 0.127
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.075
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:46:08Z",
+    "old_peak": 0.846,
+    "old_avg": 0.574,
+    "ae_new": 0.258,
+    "kilo": 0.0,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Bird",
+        "p": 0.139
+      },
+      {
+        "cls": "Frog",
+        "p": 0.101
+      },
+      {
+        "cls": "Animal",
+        "p": 0.087
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:47:09Z",
+    "old_peak": 0.791,
+    "old_avg": 0.737,
+    "ae_new": 0.116,
+    "kilo": 0.031,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.358
+      },
+      {
+        "cls": "Insect",
+        "p": 0.19
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.076
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:48:15Z",
+    "old_peak": 0.72,
+    "old_avg": 0.359,
+    "ae_new": 0.752,
+    "kilo": 0.558,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.509
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.189
+      },
+      {
+        "cls": "Insect",
+        "p": 0.147
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:49:20Z",
+    "old_peak": 0.708,
+    "old_avg": 0.657,
+    "ae_new": 0.727,
+    "kilo": 0.643,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.35
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.172
+      },
+      {
+        "cls": "Music",
+        "p": 0.116
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:50:22Z",
+    "old_peak": 0.813,
+    "old_avg": 0.712,
+    "ae_new": 0.758,
+    "kilo": 0.846,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Buzz",
+        "p": 0.209
+      },
+      {
+        "cls": "Frog",
+        "p": 0.149
+      },
+      {
+        "cls": "Music",
+        "p": 0.136
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:52:02Z",
+    "old_peak": 0.734,
+    "old_avg": 0.491,
+    "ae_new": 0.826,
+    "kilo": 0.085,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.416
+      },
+      {
+        "cls": "Insect",
+        "p": 0.183
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.091
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:53:07Z",
+    "old_peak": 0.803,
+    "old_avg": 0.723,
+    "ae_new": 0.797,
+    "kilo": 0.904,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.443
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.123
+      },
+      {
+        "cls": "Quack",
+        "p": 0.09
+      }
+    ]
+  },
+  {
+    "sensor": "SH009",
+    "ts": "2026-06-05T01:53:26Z",
+    "old_peak": 0.726,
+    "old_avg": 0.648,
+    "ae_new": 0.742,
+    "kilo": 0.774,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Silence",
+        "p": 0.293
+      },
+      {
+        "cls": "Music",
+        "p": 0.066
+      },
+      {
+        "cls": "Hum",
+        "p": 0.029
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:54:07Z",
+    "old_peak": 0.802,
+    "old_avg": 0.724,
+    "ae_new": 0.756,
+    "kilo": 0.398,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.516
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.158
+      },
+      {
+        "cls": "Croak",
+        "p": 0.106
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:55:09Z",
+    "old_peak": 0.83,
+    "old_avg": 0.631,
+    "ae_new": 0.684,
+    "kilo": 0.134,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.279
+      },
+      {
+        "cls": "Insect",
+        "p": 0.147
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.068
+      }
+    ]
+  },
+  {
+    "sensor": "SH016",
+    "ts": "2026-06-05T01:55:49Z",
+    "old_peak": 0.863,
+    "old_avg": 0.174,
+    "ae_new": 0.0,
+    "kilo": 0.0,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Field recording",
+        "p": 0.478
+      },
+      {
+        "cls": "Vehicle",
+        "p": 0.476
+      },
+      {
+        "cls": "Rumble",
+        "p": 0.431
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:56:30Z",
+    "old_peak": 0.808,
+    "old_avg": 0.322,
+    "ae_new": 0.617,
+    "kilo": 0.005,
+    "ganon_fire": false,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.304
+      },
+      {
+        "cls": "Insect",
+        "p": 0.116
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.054
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:57:33Z",
+    "old_peak": 0.782,
+    "old_avg": 0.727,
+    "ae_new": 0.761,
+    "kilo": 0.755,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.382
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.132
+      },
+      {
+        "cls": "Croak",
+        "p": 0.058
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:58:43Z",
+    "old_peak": 0.766,
+    "old_avg": 0.374,
+    "ae_new": 0.744,
+    "kilo": 0.789,
+    "ganon_fire": true,
+    "ast_top": [
+      {
+        "cls": "Frog",
+        "p": 0.345
+      },
+      {
+        "cls": "Quack",
+        "p": 0.13
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.063
+      }
+    ]
+  }
+]

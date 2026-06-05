@@ -1,0 +1,1560 @@
+[
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:20:12Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.322
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.214
+      },
+      {
+        "cls": "Insect",
+        "p": 0.074
+      },
+      {
+        "cls": "Croak",
+        "p": 0.065
+      },
+      {
+        "cls": "Music",
+        "p": 0.05
+      },
+      {
+        "cls": "Silence",
+        "p": 0.03
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.021
+      },
+      {
+        "cls": "Fly, housefly",
+        "p": 0.014
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:21:25Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.349
+      },
+      {
+        "cls": "Music",
+        "p": 0.132
+      },
+      {
+        "cls": "Insect",
+        "p": 0.08
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.057
+      },
+      {
+        "cls": "Croak",
+        "p": 0.056
+      },
+      {
+        "cls": "Silence",
+        "p": 0.043
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.026
+      },
+      {
+        "cls": "Bird",
+        "p": 0.024
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:23:24Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.35
+      },
+      {
+        "cls": "Music",
+        "p": 0.214
+      },
+      {
+        "cls": "Silence",
+        "p": 0.072
+      },
+      {
+        "cls": "Insect",
+        "p": 0.071
+      },
+      {
+        "cls": "Croak",
+        "p": 0.061
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.057
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.038
+      },
+      {
+        "cls": "Bird",
+        "p": 0.037
+      }
+    ]
+  },
+  {
+    "sensor": "SH009",
+    "ts": "2026-06-05T01:24:09Z",
+    "top": [
+      {
+        "cls": "Silence",
+        "p": 0.416
+      },
+      {
+        "cls": "Music",
+        "p": 0.04
+      },
+      {
+        "cls": "White noise",
+        "p": 0.021
+      },
+      {
+        "cls": "Outside, rural or natural",
+        "p": 0.014
+      },
+      {
+        "cls": "Sine wave",
+        "p": 0.013
+      },
+      {
+        "cls": "Musical instrument",
+        "p": 0.01
+      },
+      {
+        "cls": "Owl",
+        "p": 0.009
+      },
+      {
+        "cls": "Singing bowl",
+        "p": 0.007
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:24:25Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.199
+      },
+      {
+        "cls": "Music",
+        "p": 0.103
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.081
+      },
+      {
+        "cls": "Insect",
+        "p": 0.067
+      },
+      {
+        "cls": "Silence",
+        "p": 0.053
+      },
+      {
+        "cls": "Croak",
+        "p": 0.036
+      },
+      {
+        "cls": "Quack",
+        "p": 0.026
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.024
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:25:27Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.537
+      },
+      {
+        "cls": "Croak",
+        "p": 0.114
+      },
+      {
+        "cls": "Insect",
+        "p": 0.067
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.065
+      },
+      {
+        "cls": "Quack",
+        "p": 0.041
+      },
+      {
+        "cls": "Music",
+        "p": 0.035
+      },
+      {
+        "cls": "Animal",
+        "p": 0.024
+      },
+      {
+        "cls": "Silence",
+        "p": 0.024
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:26:28Z",
+    "top": [
+      {
+        "cls": "Music",
+        "p": 0.519
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.096
+      },
+      {
+        "cls": "Silence",
+        "p": 0.095
+      },
+      {
+        "cls": "Frog",
+        "p": 0.075
+      },
+      {
+        "cls": "Musical instrument",
+        "p": 0.041
+      },
+      {
+        "cls": "Insect",
+        "p": 0.03
+      },
+      {
+        "cls": "Guitar",
+        "p": 0.028
+      },
+      {
+        "cls": "Plucked string instrument",
+        "p": 0.022
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:27:30Z",
+    "top": [
+      {
+        "cls": "Music",
+        "p": 0.684
+      },
+      {
+        "cls": "Silence",
+        "p": 0.101
+      },
+      {
+        "cls": "Musical instrument",
+        "p": 0.063
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.053
+      },
+      {
+        "cls": "Guitar",
+        "p": 0.045
+      },
+      {
+        "cls": "Plucked string instrument",
+        "p": 0.045
+      },
+      {
+        "cls": "Pizzicato",
+        "p": 0.032
+      },
+      {
+        "cls": "Strum",
+        "p": 0.028
+      }
+    ]
+  },
+  {
+    "sensor": "SH009",
+    "ts": "2026-06-05T01:27:57Z",
+    "top": [
+      {
+        "cls": "Silence",
+        "p": 0.363
+      },
+      {
+        "cls": "Music",
+        "p": 0.112
+      },
+      {
+        "cls": "Musical instrument",
+        "p": 0.02
+      },
+      {
+        "cls": "Singing bowl",
+        "p": 0.017
+      },
+      {
+        "cls": "Sine wave",
+        "p": 0.013
+      },
+      {
+        "cls": "Outside, rural or natural",
+        "p": 0.01
+      },
+      {
+        "cls": "White noise",
+        "p": 0.009
+      },
+      {
+        "cls": "Hum",
+        "p": 0.008
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:28:31Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.376
+      },
+      {
+        "cls": "Music",
+        "p": 0.207
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.11
+      },
+      {
+        "cls": "Croak",
+        "p": 0.069
+      },
+      {
+        "cls": "Insect",
+        "p": 0.069
+      },
+      {
+        "cls": "Silence",
+        "p": 0.057
+      },
+      {
+        "cls": "Fowl",
+        "p": 0.044
+      },
+      {
+        "cls": "Gobble",
+        "p": 0.026
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:29:33Z",
+    "top": [
+      {
+        "cls": "Insect",
+        "p": 0.235
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.103
+      },
+      {
+        "cls": "Music",
+        "p": 0.103
+      },
+      {
+        "cls": "Frog",
+        "p": 0.102
+      },
+      {
+        "cls": "Silence",
+        "p": 0.052
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.047
+      },
+      {
+        "cls": "Fly, housefly",
+        "p": 0.043
+      },
+      {
+        "cls": "Mosquito",
+        "p": 0.021
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:30:35Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.399
+      },
+      {
+        "cls": "Insect",
+        "p": 0.187
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.112
+      },
+      {
+        "cls": "Croak",
+        "p": 0.056
+      },
+      {
+        "cls": "Fly, housefly",
+        "p": 0.041
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.04
+      },
+      {
+        "cls": "Silence",
+        "p": 0.035
+      },
+      {
+        "cls": "Mosquito",
+        "p": 0.03
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:31:36Z",
+    "top": [
+      {
+        "cls": "Insect",
+        "p": 0.25
+      },
+      {
+        "cls": "Frog",
+        "p": 0.158
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.101
+      },
+      {
+        "cls": "Bird",
+        "p": 0.058
+      },
+      {
+        "cls": "Fowl",
+        "p": 0.045
+      },
+      {
+        "cls": "Environmental noise",
+        "p": 0.042
+      },
+      {
+        "cls": "Animal",
+        "p": 0.034
+      },
+      {
+        "cls": "Bird vocalization, bird call, bird song",
+        "p": 0.032
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:32:37Z",
+    "top": [
+      {
+        "cls": "Insect",
+        "p": 0.112
+      },
+      {
+        "cls": "Frog",
+        "p": 0.094
+      },
+      {
+        "cls": "Music",
+        "p": 0.087
+      },
+      {
+        "cls": "Animal",
+        "p": 0.068
+      },
+      {
+        "cls": "Silence",
+        "p": 0.058
+      },
+      {
+        "cls": "Bird",
+        "p": 0.055
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.044
+      },
+      {
+        "cls": "Environmental noise",
+        "p": 0.03
+      }
+    ]
+  },
+  {
+    "sensor": "SH002",
+    "ts": "2026-06-05T01:33:21Z",
+    "top": [
+      {
+        "cls": "Music",
+        "p": 0.597
+      },
+      {
+        "cls": "Caw",
+        "p": 0.186
+      },
+      {
+        "cls": "Crow",
+        "p": 0.137
+      },
+      {
+        "cls": "Field recording",
+        "p": 0.029
+      },
+      {
+        "cls": "Vehicle",
+        "p": 0.018
+      },
+      {
+        "cls": "Bird",
+        "p": 0.017
+      },
+      {
+        "cls": "Television",
+        "p": 0.016
+      },
+      {
+        "cls": "Silence",
+        "p": 0.015
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:33:39Z",
+    "top": [
+      {
+        "cls": "Buzz",
+        "p": 0.243
+      },
+      {
+        "cls": "Frog",
+        "p": 0.134
+      },
+      {
+        "cls": "Insect",
+        "p": 0.129
+      },
+      {
+        "cls": "Silence",
+        "p": 0.086
+      },
+      {
+        "cls": "Music",
+        "p": 0.083
+      },
+      {
+        "cls": "Croak",
+        "p": 0.034
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.032
+      },
+      {
+        "cls": "Fly, housefly",
+        "p": 0.022
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:34:41Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.268
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.206
+      },
+      {
+        "cls": "Insect",
+        "p": 0.06
+      },
+      {
+        "cls": "Croak",
+        "p": 0.059
+      },
+      {
+        "cls": "Silence",
+        "p": 0.044
+      },
+      {
+        "cls": "Music",
+        "p": 0.041
+      },
+      {
+        "cls": "Quack",
+        "p": 0.035
+      },
+      {
+        "cls": "Mosquito",
+        "p": 0.022
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:36:26Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.4
+      },
+      {
+        "cls": "Insect",
+        "p": 0.303
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.161
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.089
+      },
+      {
+        "cls": "Croak",
+        "p": 0.05
+      },
+      {
+        "cls": "Animal",
+        "p": 0.029
+      },
+      {
+        "cls": "Fly, housefly",
+        "p": 0.028
+      },
+      {
+        "cls": "Silence",
+        "p": 0.023
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:37:57Z",
+    "top": [
+      {
+        "cls": "Insect",
+        "p": 0.416
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.212
+      },
+      {
+        "cls": "Frog",
+        "p": 0.171
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.066
+      },
+      {
+        "cls": "Animal",
+        "p": 0.026
+      },
+      {
+        "cls": "Bird",
+        "p": 0.024
+      },
+      {
+        "cls": "Silence",
+        "p": 0.024
+      },
+      {
+        "cls": "Music",
+        "p": 0.023
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:38:58Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.265
+      },
+      {
+        "cls": "Insect",
+        "p": 0.254
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.154
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.086
+      },
+      {
+        "cls": "Croak",
+        "p": 0.022
+      },
+      {
+        "cls": "Silence",
+        "p": 0.021
+      },
+      {
+        "cls": "Animal",
+        "p": 0.02
+      },
+      {
+        "cls": "Fly, housefly",
+        "p": 0.017
+      }
+    ]
+  },
+  {
+    "sensor": "SH016",
+    "ts": "2026-06-05T01:39:56Z",
+    "top": [
+      {
+        "cls": "White noise",
+        "p": 0.168
+      },
+      {
+        "cls": "Vehicle",
+        "p": 0.065
+      },
+      {
+        "cls": "Rustling leaves",
+        "p": 0.054
+      },
+      {
+        "cls": "Owl",
+        "p": 0.047
+      },
+      {
+        "cls": "Eruption",
+        "p": 0.031
+      },
+      {
+        "cls": "Rustle",
+        "p": 0.031
+      },
+      {
+        "cls": "Hoot",
+        "p": 0.025
+      },
+      {
+        "cls": "Field recording",
+        "p": 0.025
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:39:59Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.269
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.167
+      },
+      {
+        "cls": "Music",
+        "p": 0.141
+      },
+      {
+        "cls": "Insect",
+        "p": 0.059
+      },
+      {
+        "cls": "Croak",
+        "p": 0.04
+      },
+      {
+        "cls": "Silence",
+        "p": 0.037
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.028
+      },
+      {
+        "cls": "Mouse",
+        "p": 0.017
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:41:01Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.159
+      },
+      {
+        "cls": "Music",
+        "p": 0.145
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.139
+      },
+      {
+        "cls": "Insect",
+        "p": 0.075
+      },
+      {
+        "cls": "Silence",
+        "p": 0.029
+      },
+      {
+        "cls": "Croak",
+        "p": 0.022
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.02
+      },
+      {
+        "cls": "Mouse",
+        "p": 0.015
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:42:02Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.423
+      },
+      {
+        "cls": "Insect",
+        "p": 0.271
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.075
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.072
+      },
+      {
+        "cls": "Croak",
+        "p": 0.054
+      },
+      {
+        "cls": "Fly, housefly",
+        "p": 0.03
+      },
+      {
+        "cls": "Mouse",
+        "p": 0.022
+      },
+      {
+        "cls": "Music",
+        "p": 0.022
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:43:04Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.435
+      },
+      {
+        "cls": "Insect",
+        "p": 0.249
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.118
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.058
+      },
+      {
+        "cls": "Croak",
+        "p": 0.04
+      },
+      {
+        "cls": "Animal",
+        "p": 0.034
+      },
+      {
+        "cls": "Bird",
+        "p": 0.024
+      },
+      {
+        "cls": "Fly, housefly",
+        "p": 0.02
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:44:05Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.421
+      },
+      {
+        "cls": "Insect",
+        "p": 0.229
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.107
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.068
+      },
+      {
+        "cls": "Croak",
+        "p": 0.059
+      },
+      {
+        "cls": "Fly, housefly",
+        "p": 0.031
+      },
+      {
+        "cls": "Music",
+        "p": 0.028
+      },
+      {
+        "cls": "Mouse",
+        "p": 0.023
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:45:07Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.549
+      },
+      {
+        "cls": "Insect",
+        "p": 0.127
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.075
+      },
+      {
+        "cls": "Croak",
+        "p": 0.062
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.056
+      },
+      {
+        "cls": "Animal",
+        "p": 0.038
+      },
+      {
+        "cls": "Bird",
+        "p": 0.036
+      },
+      {
+        "cls": "Quack",
+        "p": 0.032
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:46:08Z",
+    "top": [
+      {
+        "cls": "Bird",
+        "p": 0.139
+      },
+      {
+        "cls": "Frog",
+        "p": 0.101
+      },
+      {
+        "cls": "Animal",
+        "p": 0.087
+      },
+      {
+        "cls": "Fowl",
+        "p": 0.078
+      },
+      {
+        "cls": "Insect",
+        "p": 0.078
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.046
+      },
+      {
+        "cls": "Duck",
+        "p": 0.043
+      },
+      {
+        "cls": "Bird vocalization, bird call, bird song",
+        "p": 0.04
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:47:09Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.358
+      },
+      {
+        "cls": "Insect",
+        "p": 0.19
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.076
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.073
+      },
+      {
+        "cls": "Music",
+        "p": 0.06
+      },
+      {
+        "cls": "Silence",
+        "p": 0.053
+      },
+      {
+        "cls": "Croak",
+        "p": 0.039
+      },
+      {
+        "cls": "Bird",
+        "p": 0.031
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:48:15Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.509
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.189
+      },
+      {
+        "cls": "Insect",
+        "p": 0.147
+      },
+      {
+        "cls": "Croak",
+        "p": 0.087
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.076
+      },
+      {
+        "cls": "Silence",
+        "p": 0.033
+      },
+      {
+        "cls": "Animal",
+        "p": 0.024
+      },
+      {
+        "cls": "Fly, housefly",
+        "p": 0.021
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:49:20Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.35
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.172
+      },
+      {
+        "cls": "Music",
+        "p": 0.116
+      },
+      {
+        "cls": "Croak",
+        "p": 0.06
+      },
+      {
+        "cls": "Insect",
+        "p": 0.057
+      },
+      {
+        "cls": "Quack",
+        "p": 0.048
+      },
+      {
+        "cls": "Silence",
+        "p": 0.04
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.026
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:50:22Z",
+    "top": [
+      {
+        "cls": "Buzz",
+        "p": 0.209
+      },
+      {
+        "cls": "Frog",
+        "p": 0.149
+      },
+      {
+        "cls": "Music",
+        "p": 0.136
+      },
+      {
+        "cls": "Silence",
+        "p": 0.062
+      },
+      {
+        "cls": "Insect",
+        "p": 0.036
+      },
+      {
+        "cls": "Croak",
+        "p": 0.029
+      },
+      {
+        "cls": "Quack",
+        "p": 0.023
+      },
+      {
+        "cls": "Musical instrument",
+        "p": 0.022
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:52:02Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.416
+      },
+      {
+        "cls": "Insect",
+        "p": 0.183
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.091
+      },
+      {
+        "cls": "Quack",
+        "p": 0.068
+      },
+      {
+        "cls": "Croak",
+        "p": 0.053
+      },
+      {
+        "cls": "Animal",
+        "p": 0.043
+      },
+      {
+        "cls": "Fly, housefly",
+        "p": 0.038
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.029
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:53:07Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.443
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.123
+      },
+      {
+        "cls": "Quack",
+        "p": 0.09
+      },
+      {
+        "cls": "Croak",
+        "p": 0.083
+      },
+      {
+        "cls": "Music",
+        "p": 0.032
+      },
+      {
+        "cls": "Animal",
+        "p": 0.028
+      },
+      {
+        "cls": "Duck",
+        "p": 0.022
+      },
+      {
+        "cls": "Insect",
+        "p": 0.019
+      }
+    ]
+  },
+  {
+    "sensor": "SH009",
+    "ts": "2026-06-05T01:53:26Z",
+    "top": [
+      {
+        "cls": "Silence",
+        "p": 0.293
+      },
+      {
+        "cls": "Music",
+        "p": 0.066
+      },
+      {
+        "cls": "Hum",
+        "p": 0.029
+      },
+      {
+        "cls": "Sonar",
+        "p": 0.02
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.02
+      },
+      {
+        "cls": "Singing bowl",
+        "p": 0.015
+      },
+      {
+        "cls": "Frog",
+        "p": 0.013
+      },
+      {
+        "cls": "Outside, rural or natural",
+        "p": 0.012
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:54:07Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.516
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.158
+      },
+      {
+        "cls": "Croak",
+        "p": 0.106
+      },
+      {
+        "cls": "Insect",
+        "p": 0.087
+      },
+      {
+        "cls": "Quack",
+        "p": 0.051
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.034
+      },
+      {
+        "cls": "Music",
+        "p": 0.032
+      },
+      {
+        "cls": "Animal",
+        "p": 0.03
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:55:09Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.279
+      },
+      {
+        "cls": "Insect",
+        "p": 0.147
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.068
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.056
+      },
+      {
+        "cls": "Fowl",
+        "p": 0.044
+      },
+      {
+        "cls": "Bird",
+        "p": 0.034
+      },
+      {
+        "cls": "Quack",
+        "p": 0.033
+      },
+      {
+        "cls": "Music",
+        "p": 0.032
+      }
+    ]
+  },
+  {
+    "sensor": "SH016",
+    "ts": "2026-06-05T01:55:49Z",
+    "top": [
+      {
+        "cls": "Field recording",
+        "p": 0.478
+      },
+      {
+        "cls": "Vehicle",
+        "p": 0.476
+      },
+      {
+        "cls": "Rumble",
+        "p": 0.431
+      },
+      {
+        "cls": "Car",
+        "p": 0.225
+      },
+      {
+        "cls": "Outside, urban or manmade",
+        "p": 0.141
+      },
+      {
+        "cls": "Aircraft",
+        "p": 0.09
+      },
+      {
+        "cls": "Fixed-wing aircraft, airplane",
+        "p": 0.072
+      },
+      {
+        "cls": "Outside, rural or natural",
+        "p": 0.068
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:56:30Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.304
+      },
+      {
+        "cls": "Insect",
+        "p": 0.116
+      },
+      {
+        "cls": "Cricket",
+        "p": 0.054
+      },
+      {
+        "cls": "Music",
+        "p": 0.049
+      },
+      {
+        "cls": "Quack",
+        "p": 0.041
+      },
+      {
+        "cls": "Animal",
+        "p": 0.036
+      },
+      {
+        "cls": "Bird",
+        "p": 0.033
+      },
+      {
+        "cls": "Croak",
+        "p": 0.032
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:57:33Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.382
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.132
+      },
+      {
+        "cls": "Croak",
+        "p": 0.058
+      },
+      {
+        "cls": "Animal",
+        "p": 0.049
+      },
+      {
+        "cls": "Quack",
+        "p": 0.042
+      },
+      {
+        "cls": "Mouse",
+        "p": 0.042
+      },
+      {
+        "cls": "Silence",
+        "p": 0.038
+      },
+      {
+        "cls": "Music",
+        "p": 0.033
+      }
+    ]
+  },
+  {
+    "sensor": "SH010",
+    "ts": "2026-06-05T01:58:43Z",
+    "top": [
+      {
+        "cls": "Frog",
+        "p": 0.345
+      },
+      {
+        "cls": "Quack",
+        "p": 0.13
+      },
+      {
+        "cls": "Buzz",
+        "p": 0.063
+      },
+      {
+        "cls": "Croak",
+        "p": 0.057
+      },
+      {
+        "cls": "Music",
+        "p": 0.052
+      },
+      {
+        "cls": "Duck",
+        "p": 0.042
+      },
+      {
+        "cls": "Animal",
+        "p": 0.034
+      },
+      {
+        "cls": "Silence",
+        "p": 0.027
+      }
+    ]
+  }
+]
